@@ -1,0 +1,58 @@
+{
+  "paper": {
+    "title": "PaperCue: 대면 연구 설명을 위한 발표자용 단서 시스템",
+    "abstract": "PaperCue는 연구자가 자신의 논문을 대면으로 설명할 때 청중 모델을 유지하고, 완성된 답변 대신 매우 짧은 단서를 제공한다.",
+    "key_contributions": ["근거 기반으로 진화하는 청중 모델", "논문 단위에 근거한 짧은 발표자 단서"],
+    "evidence_results": [],
+    "limitations": [],
+    "preferred_terminology": {},
+    "forbidden_claims": ["PaperCue가 발표자 대신 답변을 읽어 준다"],
+    "extract_units_from_text": false,
+    "units": [
+      {
+        "unit_type": "method",
+        "title": "로컬 처리 및 데이터 저장 정책",
+        "content": "PaperCue는 원본 대화를 외부 서버로 전송하지 않고 로컬에서 처리한다. 입력된 발화와 청중 모델은 연구자 컴퓨터의 SQLite 데이터베이스에만 저장되며 내보내기와 삭제가 가능하다.",
+        "short_explanation": "모든 처리가 발표자 컴퓨터 안에서 이루어지고 외부로 전송되지 않는다.",
+        "keywords": ["로컬 처리", "개인정보 보호", "서버", "저장"],
+        "source_reference": "4.3절",
+        "presenter_priority": 0.9
+      },
+      {
+        "unit_type": "connection",
+        "title": "웨어러블 센싱과의 연결",
+        "content": "단서는 이어버드를 통해 개인적으로 전달되도록 설계되어 웨어러블 센싱 및 웨어러블 상호작용 연구와 연결된다.",
+        "short_explanation": "이어버드 전달 방식이 웨어러블 센싱 연구와 연결된다.",
+        "keywords": ["웨어러블 센싱", "이어버드", "웨어러블"],
+        "source_reference": "6절",
+        "presenter_priority": 0.6
+      },
+      {
+        "unit_type": "core_idea",
+        "title": "답변이 아닌 단서",
+        "content": "PaperCue는 발표자 대신 답변을 작성하지 않는다. 두세 단어에서 일곱 단어 정도의 짧은 단서만 제공하여 발표자가 대화를 주도하게 한다.",
+        "short_explanation": "짧은 단서만 주고 설명은 발표자가 한다.",
+        "keywords": ["단서", "발표자 주도"],
+        "source_reference": "3절",
+        "presenter_priority": 0.85
+      }
+    ]
+  },
+  "profile": {
+    "research_topics": ["웨어러블 센싱"],
+    "recent_paper_keywords": [],
+    "familiar_methods": [],
+    "application_domains": [],
+    "connection_notes": []
+  },
+  "turns": [
+    {"speaker": "presenter", "text": "안녕하세요. 이 포스터는 발표자에게 짧은 단서를 주는 PaperCue 시스템에 관한 것입니다."},
+    {"speaker": "listener", "text": "이 대화가 서버에 저장되는 건가요?"}
+  ],
+  "expected": {
+    "concern_key": "privacy",
+    "retrieved_unit_title": "로컬 처리 및 데이터 저장 정책",
+    "action": "address_concern",
+    "cue": "개인정보 먼저—로컬 처리"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "title": "PaperCue: Speaker-Side Cues for Explaining Research Face to Face",
+  "abstract": "PaperCue helps researchers explain their papers in face-to-face conversations by maintaining an evolving audience model and giving the presenter very short private cues instead of complete answers.",
+  "key_contributions": [
+    "An evolving, evidence-backed audience model that separates profile priors from conversational evidence.",
+    "A cue generator that produces short presenter cues grounded in structured paper units."
+  ],
+  "evidence_results": [],
+  "limitations": [],
+  "preferred_terminology": {"LLM": "local language model"},
+  "forbidden_claims": ["PaperCue reads answers aloud for the presenter", "PaperCue has been validated in a user study"],
+  "extract_units_from_text": false,
+  "units": [
+    {
+      "unit_type": "method",
+      "title": "Local processing and data storage",
+      "content": "PaperCue processes conversation data locally and does not upload raw audio. Typed turns and the derived audience model are stored in a local SQLite database that the researcher can export or delete.",
+      "short_explanation": "All processing stays on the presenter's computer; nothing is uploaded.",
+      "keywords": ["local processing", "privacy", "data storage", "server", "upload"],
+      "source_reference": "Section 4.3",
+      "presenter_priority": 0.9
+    },
+    {
+      "unit_type": "method",
+      "title": "Evolving audience model",
+      "content": "The audience model stores explicit beliefs about familiarity, interests, goals, concerns and preferred explanation level. Each belief keeps its confidence, supporting evidence, source turn, and update reason.",
+      "short_explanation": "Beliefs about the listener are updated from conversational evidence.",
+      "keywords": ["audience model", "adaptation", "user model", "evidence"],
+      "source_reference": "Section 4.2",
+      "presenter_priority": 0.8
+    },
+    {
+      "unit_type": "core_idea",
+      "title": "Cues, not answers",
+      "content": "PaperCue never writes answers for the presenter. It provides two-to-seven word cues such as 'start with practical use' so the presenter stays in control of the conversation.",
+      "short_explanation": "The system gives short cues; the presenter still does the explaining.",
+      "keywords": ["cues", "presenter control", "short cues"],
+      "source_reference": "Section 3",
+      "presenter_priority": 0.85
+    },
+    {
+      "unit_type": "application",
+      "title": "Poster sessions and lab visits",
+      "content": "Typical uses are poster sessions, lab visits and hallway conversations where a researcher explains the same paper to many listeners with different backgrounds.",
+      "short_explanation": "Useful when one paper is explained to many different listeners.",
+      "keywords": ["practical use", "poster sessions", "lab visits", "applications"],
+      "source_reference": "Section 1",
+      "presenter_priority": 0.7
+    },
+    {
+      "unit_type": "connection",
+      "title": "Wearable sensing connection",
+      "content": "Cues are designed to be delivered privately through an earbud, which connects PaperCue to wearable sensing and wearable interaction research.",
+      "short_explanation": "Earbud delivery links the work to wearable sensing.",
+      "keywords": ["wearable sensing", "earbud", "wearable interaction"],
+      "source_reference": "Section 6",
+      "presenter_priority": 0.6
+    },
+    {
+      "unit_type": "example",
+      "title": "Explaining the language model simply",
+      "content": "Instead of saying 'a local language model classifies dialogue acts', the presenter can say the system notices whether the listener is asking, doubting, or agreeing.",
+      "short_explanation": "Replace model jargon with what the system notices.",
+      "keywords": ["language model", "example", "plain explanation"],
+      "source_reference": "Section 4.1",
+      "presenter_priority": 0.6
+    },
+    {
+      "unit_type": "limitation",
+      "title": "Latency of local models",
+      "content": "Running the language model locally adds latency, so cues may arrive after the moment has passed. The current prototype uses typed input instead of live speech.",
+      "short_explanation": "Local inference is slow and live speech is not yet supported.",
+      "keywords": ["latency", "limitation", "typed input"],
+      "source_reference": "Section 7",
+      "presenter_priority": 0.7
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {"speaker": "presenter", "text": "Hi, thanks for stopping by. This poster is about PaperCue, a system that gives presenters short cues."},
+  {"speaker": "listener", "text": "Nice to meet you. I work on wearable sensing, so the earbud part caught my eye."},
+  {"speaker": "presenter", "text": "The system keeps an audience model and retrieves paper units to produce a cue."},
+  {"speaker": "listener", "text": "I'm not familiar with language models. Can you explain that more simply?"},
+  {"speaker": "presenter", "text": "Sure, it basically notices whether you are asking, doubting, or agreeing."},
+  {"speaker": "listener", "text": "Does this send our conversation to a server?"}
+]
