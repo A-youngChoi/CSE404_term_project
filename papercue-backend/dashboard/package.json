@@ -1,0 +1,18 @@
+{
+  "name": "papercue-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local-only Korean researcher dashboard for the PaperCue backend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "vite": "^8.3.0",
+    "vitest": "^4.1.11"
+  }
+}
