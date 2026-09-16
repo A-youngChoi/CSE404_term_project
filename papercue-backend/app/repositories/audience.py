@@ -102,7 +102,7 @@ class AudienceRepository:
 
     def list_history(self, session_id: str) -> list[dict]:
         return self.db.fetchall(
-            "SELECT h.*, b.dimension, b.key, t.turn_index FROM audience_belief_history h "
+            "SELECT h.*, b.dimension, b.key, t.turn_index, e.evidence_type FROM audience_belief_history h "
             "JOIN audience_beliefs b ON b.id = h.belief_id "
             "LEFT JOIN evidence_items e ON e.id = h.evidence_id "
             "LEFT JOIN conversation_turns t ON t.id = e.turn_id "
