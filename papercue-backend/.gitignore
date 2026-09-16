@@ -1,0 +1,46 @@
+# --- PaperCue: never commit participant data, databases, secrets, or build output ---
+
+# Environment / secrets (only the sanitized example is tracked)
+.env
+.env.*
+!.env.example
+
+# Local application data (databases, uploaded papers, exports, indexes)
+data/
+uploads/
+exports/
+# Root-anchored so the source package app/models/ stays tracked.
+/models/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.npy
+*.gguf
+*.safetensors
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+
+# Dashboard (Node)
+node_modules/
+dist/
+coverage/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

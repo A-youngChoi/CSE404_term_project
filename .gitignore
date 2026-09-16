@@ -1,0 +1,19 @@
+# Repository-wide safety net (see papercue-backend/.gitignore for details).
+.env
+.env.*
+!.env.example
+data/
+uploads/
+exports/
+/models/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+dist/
+coverage/
+.DS_Store
