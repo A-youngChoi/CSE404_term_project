@@ -209,7 +209,8 @@ class PipelineService:
                 st.output_reference_ids = [c["belief_id"] for c in changes]
                 st.output = {"changes": [{k: c[k] for k in ("belief_id", "dimension", "key", "change_type", "old_value",
                                                             "new_value", "old_confidence", "new_confidence",
-                                                            "evidence_id", "evidence_type")} for c in changes]}
+                                                            "evidence_id", "evidence_type", "source_type")}
+                                        for c in changes]}
                 st.rationale_code = "beliefs_updated" if changes else "no_belief_change"
                 st.short_rationale = f"{len(changes)} belief change(s) applied by the update policy."
         else:
@@ -480,6 +481,8 @@ class PipelineService:
         stored_trace = cue_trace.model_dump(mode="json", exclude={"trigger_turn_text", "audience_evidence"})
         stored_trace["conversation_state"] = state_without_text(state)
         stored_trace["audience_evidence_ids"] = [e.id for e in trigger_evidence]
+        stored_trace["reason_params"] = decision.reason_params
+        stored_trace["decision_evidence_ids"] = decision.evidence_used
         stored_trace["earlier_context"] = [{k: v for k, v in m.items() if k != "gist"} for m in stored_trace["earlier_context"]]
         self.cues.add_decision(
             decision_id=decision.id, session_id=sid, trigger_turn_id=trigger.id, mode=mode.value,
