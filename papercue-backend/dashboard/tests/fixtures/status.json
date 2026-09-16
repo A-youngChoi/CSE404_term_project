@@ -1,0 +1,70 @@
+{
+ "backend": {
+  "status": "ok",
+  "pipeline_version": "papercue-pipeline-0.2",
+  "prompt_version": "v1",
+  "schema_version": "2"
+ },
+ "database": {
+  "ok": true,
+  "location": "<outside project>/f.db",
+  "papers": 1,
+  "sessions": 1,
+  "active_sessions": 1
+ },
+ "llm": {
+  "default_provider": "mock",
+  "ollama_model": "qwen2.5:7b-instruct",
+  "ollama_endpoint_is_local": true,
+  "ollama_available": false,
+  "ollama_model_installed": false,
+  "ollama_error_code": "ollama_unreachable",
+  "temperature": 0.1,
+  "max_retries": 1,
+  "audience_update_strategy": "llm"
+ },
+ "embeddings": {
+  "provider": "hashing",
+  "model": "mock:hashing-embedder",
+  "loaded": true,
+  "allow_download": false,
+  "simulated": true
+ },
+ "network": {
+  "host": "127.0.0.1",
+  "port": 8000,
+  "loopback_only": true,
+  "cors_origins": [
+   "http://127.0.0.1:5173",
+   "http://localhost:5173"
+  ],
+  "external_services": [],
+  "api_docs_enabled": true
+ },
+ "privacy": {
+  "retention_days": 7,
+  "purge_on_startup": false,
+  "debug_store_prompts": false,
+  "papers_dir": "<outside project>/p",
+  "max_upload_bytes": 1000000,
+  "max_turn_chars": 2000
+ },
+ "parameters": {
+  "recent_turn_window": 6,
+  "profile_confidence_cap": 0.65,
+  "profile_decay_per_turn": 0.97,
+  "min_cue_confidence": 0.45,
+  "auto_candidate_threshold": 0.6,
+  "cue_max_words": 12,
+  "retrieval_top_k": 4
+ },
+ "git": {
+  "checked": true,
+  "files": []
+ },
+ "recent_errors": [],
+ "warnings": [
+  "ollama_unavailable",
+  "default_mock_mode"
+ ]
+}

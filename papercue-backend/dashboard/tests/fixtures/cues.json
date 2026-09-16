@@ -1,0 +1,458 @@
+[
+ {
+  "id": "40315839-ff37-4fcb-89af-bb0173211b3f",
+  "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+  "trigger_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+  "mode": "on_demand",
+  "should_intervene": true,
+  "action": "address_concern",
+  "target": "privacy",
+  "confidence": 0.6468,
+  "short_reason": "The listener raised a privacy concern that is still open.",
+  "reason_code": "explicit_concern",
+  "final_status": "deliverable",
+  "scores": {
+   "need": 0.9,
+   "relevance": 0.0486,
+   "grounding": 0.3936,
+   "model_confidence": 0.9,
+   "novelty": 1.0,
+   "timing": 1.0,
+   "interruption_cost": 0.1,
+   "total": 0.6538
+  },
+  "trace": {
+   "trigger_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+   "conversation_state": {
+    "phase": "method_elaboration",
+    "topic": "privacy",
+    "listener_act": "question",
+    "presenter_act": "other",
+    "explicit_question_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "unresolved_issues": [
+     {
+      "topic": "privacy",
+      "raised_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+      "status": "open"
+     }
+    ],
+    "detected_concerns": [
+     "privacy"
+    ],
+    "possible_misunderstanding": null,
+    "recently_explained_unit_ids": [],
+    "recent_cues": [],
+    "turn_count": 3,
+    "listener_turn_count": 2,
+    "turns_since_last_cue": 3,
+    "last_listener_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "last_speaker": "listener"
+   },
+   "beliefs_used": [
+    {
+     "id": "27a58258-a1bd-4b75-bc5e-4f6686e9d961",
+     "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+     "dimension": "concern",
+     "key": "privacy",
+     "value": "raised",
+     "confidence": 0.9,
+     "effective_confidence": 0.9,
+     "uncertainty": 0.1,
+     "status": "active",
+     "lifecycle": "explicitly_confirmed",
+     "source_type": "conversation",
+     "source_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+     "source_turn_index": 3,
+     "evidence_ids": [
+      "6b69b133-5246-4139-82dc-7e776c9e9272"
+     ],
+     "support_count": 1,
+     "contradict_count": 0,
+     "pending_value": null,
+     "last_evidence_type": "explicit",
+     "reason": "Listener asked about privacy-related issues.",
+     "created_at": "2026-09-16T14:17:00.065+00:00",
+     "updated_at": "2026-09-16T14:17:00.065+00:00"
+    }
+   ],
+   "retrieved_units": [
+    {
+     "unit_id": "a4c14a70-5b08-4ee3-b81f-cbaea567a5ae",
+     "unit_type": "method",
+     "title": "로컬 처리 및 데이터 저장 정책",
+     "short_explanation": "모든 처리가 발표자 컴퓨터 안에서 이루어지고 외부로 전송되지 않는다.",
+     "keywords": [
+      "로컬 처리",
+      "개인정보 보호",
+      "서버",
+      "저장"
+     ],
+     "source_reference": "4.3절",
+     "score": 0.4581,
+     "similarity": 0.0331
+    }
+   ],
+   "earlier_context": [],
+   "latency_ms": {
+    "input_turn": 0.0,
+    "recent_context": 0.04,
+    "dialogue_act_analysis": 0.0,
+    "evidence_extraction": 0.0,
+    "audience_update_applied": 0.0,
+    "retrieval_query": 0.0,
+    "retrieval": 0.14,
+    "intervention_decision": 0.04,
+    "cue_candidate": 0.59,
+    "safety_grounding_check": 0.01,
+    "final_result": 0.0,
+    "total": 0.82
+   },
+   "audience_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272",
+    "8e11231c-e55c-4b05-8fd0-3ed862ad4aa5"
+   ],
+   "reason_params": {
+    "target": "privacy"
+   },
+   "decision_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272"
+   ]
+  },
+  "latency_ms": {
+   "input_turn": 0.0,
+   "recent_context": 0.04,
+   "dialogue_act_analysis": 0.0,
+   "evidence_extraction": 0.0,
+   "audience_update_applied": 0.0,
+   "retrieval_query": 0.0,
+   "retrieval": 0.14,
+   "intervention_decision": 0.04,
+   "cue_candidate": 0.59,
+   "safety_grounding_check": 0.01,
+   "final_result": 0.0,
+   "total": 0.82
+  },
+  "created_at": "2026-09-16T14:17:00.068+00:00",
+  "generated": {
+   "id": "0327dca1-64b0-43f5-a802-32fcc37daf90",
+   "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+   "decision_id": "40315839-ff37-4fcb-89af-bb0173211b3f",
+   "cue": "개인정보 먼저—로컬 처리",
+   "candidate_cue": "개인정보 먼저—로컬 처리",
+   "action": "address_concern",
+   "grounding_unit_ids": [
+    "a4c14a70-5b08-4ee3-b81f-cbaea567a5ae"
+   ],
+   "audience_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272",
+    "8e11231c-e55c-4b05-8fd0-3ed862ad4aa5"
+   ],
+   "confidence": 0.85,
+   "rationale": "'개인정보'에 맞춘 단서이며 논문 단위에 근거함.",
+   "passed_filter": true,
+   "filter_results": [
+    {
+     "name": "valid_json",
+     "passed": true,
+     "detail": "schema validated"
+    },
+    {
+     "name": "action_matches_decision",
+     "passed": true,
+     "detail": "decided=address_concern returned=address_concern"
+    },
+    {
+     "name": "word_limit",
+     "passed": true,
+     "detail": "4 words (max 12)"
+    },
+    {
+     "name": "cue_not_answer",
+     "passed": true,
+     "detail": "short cue form"
+    },
+    {
+     "name": "not_vague",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "grounding_ids_valid",
+     "passed": true,
+     "detail": "1 unit(s)"
+    },
+    {
+     "name": "no_unsupported_claims",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_forbidden_claims",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "audience_claims_supported",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_sensitive_inference",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_manipulation",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "not_repeated",
+     "passed": true,
+     "detail": "max similarity 0.00"
+    },
+    {
+     "name": "confidence_threshold",
+     "passed": true,
+     "detail": "0.85 (min 0.45)"
+    }
+   ],
+   "fallback_used": false,
+   "delivered": true,
+   "final_status": "deliverable",
+   "generator": "mock:deterministic-rules",
+   "created_at": "2026-09-16T14:17:00.068+00:00"
+  },
+  "trigger_turn_index": 3,
+  "trigger_turn_text": "이 대화가 서버에 저장되는 건가요?"
+ },
+ {
+  "id": "78512996-450d-46de-936d-67eee0499cd9",
+  "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+  "trigger_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+  "mode": "on_demand",
+  "should_intervene": true,
+  "action": "address_concern",
+  "target": "privacy",
+  "confidence": 0.6468,
+  "short_reason": "The listener raised a privacy concern that is still open.",
+  "reason_code": "explicit_concern",
+  "final_status": "duplicate_recent",
+  "scores": {
+   "need": 0.9,
+   "relevance": 0.0486,
+   "grounding": 0.3936,
+   "model_confidence": 0.9,
+   "novelty": 0.2,
+   "timing": 0.0,
+   "interruption_cost": 0.1,
+   "total": 0.4738
+  },
+  "trace": {
+   "trigger_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+   "conversation_state": {
+    "phase": "method_elaboration",
+    "topic": "privacy",
+    "listener_act": "question",
+    "presenter_act": "other",
+    "explicit_question_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "unresolved_issues": [
+     {
+      "topic": "privacy",
+      "raised_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+      "status": "open"
+     }
+    ],
+    "detected_concerns": [
+     "privacy"
+    ],
+    "possible_misunderstanding": null,
+    "recently_explained_unit_ids": [],
+    "recent_cues": [
+     "개인정보 먼저—로컬 처리"
+    ],
+    "turn_count": 3,
+    "listener_turn_count": 2,
+    "turns_since_last_cue": 0,
+    "last_listener_turn_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "last_speaker": "listener"
+   },
+   "beliefs_used": [
+    {
+     "id": "27a58258-a1bd-4b75-bc5e-4f6686e9d961",
+     "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+     "dimension": "concern",
+     "key": "privacy",
+     "value": "raised",
+     "confidence": 0.9,
+     "effective_confidence": 0.9,
+     "uncertainty": 0.1,
+     "status": "active",
+     "lifecycle": "explicitly_confirmed",
+     "source_type": "conversation",
+     "source_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+     "source_turn_index": 3,
+     "evidence_ids": [
+      "6b69b133-5246-4139-82dc-7e776c9e9272"
+     ],
+     "support_count": 1,
+     "contradict_count": 0,
+     "pending_value": null,
+     "last_evidence_type": "explicit",
+     "reason": "Listener asked about privacy-related issues.",
+     "created_at": "2026-09-16T14:17:00.065+00:00",
+     "updated_at": "2026-09-16T14:17:00.065+00:00"
+    }
+   ],
+   "retrieved_units": [
+    {
+     "unit_id": "a4c14a70-5b08-4ee3-b81f-cbaea567a5ae",
+     "unit_type": "method",
+     "title": "로컬 처리 및 데이터 저장 정책",
+     "short_explanation": "모든 처리가 발표자 컴퓨터 안에서 이루어지고 외부로 전송되지 않는다.",
+     "keywords": [
+      "로컬 처리",
+      "개인정보 보호",
+      "서버",
+      "저장"
+     ],
+     "source_reference": "4.3절",
+     "score": 0.4581,
+     "similarity": 0.0331
+    }
+   ],
+   "earlier_context": [],
+   "latency_ms": {
+    "input_turn": 0.0,
+    "recent_context": 0.06,
+    "dialogue_act_analysis": 0.0,
+    "evidence_extraction": 0.0,
+    "audience_update_applied": 0.0,
+    "retrieval_query": 0.0,
+    "retrieval": 0.16,
+    "intervention_decision": 0.08,
+    "cue_candidate": 0.31,
+    "safety_grounding_check": 0.01,
+    "final_result": 0.0,
+    "total": 0.62
+   },
+   "audience_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272",
+    "8e11231c-e55c-4b05-8fd0-3ed862ad4aa5"
+   ],
+   "reason_params": {
+    "target": "privacy"
+   },
+   "decision_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272"
+   ]
+  },
+  "latency_ms": {
+   "input_turn": 0.0,
+   "recent_context": 0.06,
+   "dialogue_act_analysis": 0.0,
+   "evidence_extraction": 0.0,
+   "audience_update_applied": 0.0,
+   "retrieval_query": 0.0,
+   "retrieval": 0.16,
+   "intervention_decision": 0.08,
+   "cue_candidate": 0.31,
+   "safety_grounding_check": 0.01,
+   "final_result": 0.0,
+   "total": 0.62
+  },
+  "created_at": "2026-09-16T14:17:00.070+00:00",
+  "generated": {
+   "id": "0008659f-4ca6-4c3a-9c93-cca941c4cdff",
+   "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+   "decision_id": "78512996-450d-46de-936d-67eee0499cd9",
+   "cue": null,
+   "candidate_cue": "개인정보 먼저—로컬 처리",
+   "action": "address_concern",
+   "grounding_unit_ids": [
+    "a4c14a70-5b08-4ee3-b81f-cbaea567a5ae"
+   ],
+   "audience_evidence_ids": [
+    "6b69b133-5246-4139-82dc-7e776c9e9272",
+    "8e11231c-e55c-4b05-8fd0-3ed862ad4aa5"
+   ],
+   "confidence": 0.85,
+   "rationale": "'개인정보'에 맞춘 단서이며 논문 단위에 근거함.",
+   "passed_filter": false,
+   "filter_results": [
+    {
+     "name": "valid_json",
+     "passed": true,
+     "detail": "schema validated"
+    },
+    {
+     "name": "action_matches_decision",
+     "passed": true,
+     "detail": "decided=address_concern returned=address_concern"
+    },
+    {
+     "name": "word_limit",
+     "passed": true,
+     "detail": "4 words (max 12)"
+    },
+    {
+     "name": "cue_not_answer",
+     "passed": true,
+     "detail": "short cue form"
+    },
+    {
+     "name": "not_vague",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "grounding_ids_valid",
+     "passed": true,
+     "detail": "1 unit(s)"
+    },
+    {
+     "name": "no_unsupported_claims",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_forbidden_claims",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "audience_claims_supported",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_sensitive_inference",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "no_manipulation",
+     "passed": true,
+     "detail": ""
+    },
+    {
+     "name": "not_repeated",
+     "passed": false,
+     "detail": "max similarity 1.00"
+    },
+    {
+     "name": "confidence_threshold",
+     "passed": true,
+     "detail": "0.85 (min 0.45)"
+    }
+   ],
+   "fallback_used": false,
+   "delivered": false,
+   "final_status": "duplicate_recent",
+   "generator": "mock:deterministic-rules",
+   "created_at": "2026-09-16T14:17:00.070+00:00"
+  },
+  "trigger_turn_index": 3,
+  "trigger_turn_text": "이 대화가 서버에 저장되는 건가요?"
+ }
+]

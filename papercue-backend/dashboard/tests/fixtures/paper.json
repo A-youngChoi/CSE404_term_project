@@ -1,0 +1,131 @@
+{
+ "id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+ "title": "PaperCue: 대면 연구 설명을 위한 발표자용 단서 시스템",
+ "abstract": "PaperCue는 연구자가 자신의 논문을 대면으로 설명할 때 청중 모델을 유지하고, 완성된 답변 대신 매우 짧은 단서를 제공한다.",
+ "key_contributions": [
+  "근거 기반으로 진화하는 청중 모델",
+  "논문 단위에 근거한 짧은 발표자 단서"
+ ],
+ "evidence_results": [],
+ "limitations": [],
+ "preferred_terminology": {},
+ "forbidden_claims": [
+  "PaperCue가 발표자 대신 답변을 읽어 준다"
+ ],
+ "has_full_text": false,
+ "unit_count": 6,
+ "indexed_unit_count": 6,
+ "created_at": "2026-09-16T14:17:00.044+00:00",
+ "updated_at": "2026-09-16T14:17:00.046+00:00",
+ "units": [
+  {
+   "id": "a4c14a70-5b08-4ee3-b81f-cbaea567a5ae",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "method",
+   "title": "로컬 처리 및 데이터 저장 정책",
+   "content": "PaperCue는 원본 대화를 외부 서버로 전송하지 않고 로컬에서 처리한다. 입력된 발화와 청중 모델은 연구자 컴퓨터의 SQLite 데이터베이스에만 저장되며 내보내기와 삭제가 가능하다.",
+   "short_explanation": "모든 처리가 발표자 컴퓨터 안에서 이루어지고 외부로 전송되지 않는다.",
+   "keywords": [
+    "로컬 처리",
+    "개인정보 보호",
+    "서버",
+    "저장"
+   ],
+   "source_reference": "4.3절",
+   "presenter_priority": 0.9,
+   "origin": "presenter",
+   "indexed": true
+  },
+  {
+   "id": "8907a7f6-3a72-455c-9b64-217d0adce4ab",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "connection",
+   "title": "웨어러블 센싱과의 연결",
+   "content": "단서는 이어버드를 통해 개인적으로 전달되도록 설계되어 웨어러블 센싱 및 웨어러블 상호작용 연구와 연결된다.",
+   "short_explanation": "이어버드 전달 방식이 웨어러블 센싱 연구와 연결된다.",
+   "keywords": [
+    "웨어러블 센싱",
+    "이어버드",
+    "웨어러블"
+   ],
+   "source_reference": "6절",
+   "presenter_priority": 0.6,
+   "origin": "presenter",
+   "indexed": true
+  },
+  {
+   "id": "10f70505-f2a1-49e3-87a0-79084c66b638",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "core_idea",
+   "title": "답변이 아닌 단서",
+   "content": "PaperCue는 발표자 대신 답변을 작성하지 않는다. 두세 단어에서 일곱 단어 정도의 짧은 단서만 제공하여 발표자가 대화를 주도하게 한다.",
+   "short_explanation": "짧은 단서만 주고 설명은 발표자가 한다.",
+   "keywords": [
+    "단서",
+    "발표자 주도"
+   ],
+   "source_reference": "3절",
+   "presenter_priority": 0.85,
+   "origin": "presenter",
+   "indexed": true
+  },
+  {
+   "id": "9d5f2f03-4a3c-434a-95c3-b98118878e96",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "core_idea",
+   "title": "Abstract",
+   "content": "PaperCue는 연구자가 자신의 논문을 대면으로 설명할 때 청중 모델을 유지하고, 완성된 답변 대신 매우 짧은 단서를 제공한다.",
+   "short_explanation": "PaperCue는 연구자가 자신의 논문을 대면으로 설명할 때 청중 모델을 유지하고, 완성된 답변 대신 매우 짧은 단서를 제공한다.",
+   "keywords": [
+    "abstract",
+    "papercue",
+    "연구자",
+    "자신",
+    "논문"
+   ],
+   "source_reference": "Abstract",
+   "presenter_priority": 0.8,
+   "origin": "presenter",
+   "indexed": true
+  },
+  {
+   "id": "b95c7c40-da1a-4cc5-a2c3-28ecc6010752",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "contribution",
+   "title": "Contribution 1",
+   "content": "근거 기반으로 진화하는 청중 모델",
+   "short_explanation": "근거 기반으로 진화하는 청중 모델",
+   "keywords": [
+    "contribution",
+    "근거",
+    "기반",
+    "진화",
+    "청중"
+   ],
+   "source_reference": "Presenter: key contributions",
+   "presenter_priority": 0.9,
+   "origin": "presenter",
+   "indexed": true
+  },
+  {
+   "id": "e27f3a6f-9c8f-4f72-9403-711fe08a3441",
+   "paper_id": "63ee4013-a605-4d26-beb5-b7d7e7fd00c2",
+   "unit_type": "contribution",
+   "title": "Contribution 2",
+   "content": "논문 단위에 근거한 짧은 발표자 단서",
+   "short_explanation": "논문 단위에 근거한 짧은 발표자 단서",
+   "keywords": [
+    "contribution",
+    "논문",
+    "단위",
+    "근거한",
+    "짧은"
+   ],
+   "source_reference": "Presenter: key contributions",
+   "presenter_priority": 0.9,
+   "origin": "presenter",
+   "indexed": true
+  }
+ ],
+ "index_model": "mock:hashing-embedder"
+}

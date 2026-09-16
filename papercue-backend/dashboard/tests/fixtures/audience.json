@@ -1,0 +1,179 @@
+{
+ "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+ "dimensions": {
+  "knowledge": [],
+  "familiarity": [
+   {
+    "id": "2eb156aa-8cda-41c8-9835-f2e87b64db58",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "familiarity",
+    "key": "language models",
+    "value": "unfamiliar",
+    "confidence": 0.9,
+    "effective_confidence": 0.9,
+    "uncertainty": 0.1,
+    "status": "active",
+    "lifecycle": "explicitly_confirmed",
+    "source_type": "conversation",
+    "source_id": "ab449313-9a36-4563-ba43-7a5492016f30",
+    "source_turn_index": 2,
+    "evidence_ids": [
+     "796eecf6-3cd5-45ef-8344-4ed84da0a6af",
+     "740c0598-eef9-4771-b46e-affec2c88014"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "explicit",
+    "reason": "Listener said they are not familiar with language models.",
+    "created_at": "2026-09-16T14:17:00.056+00:00",
+    "updated_at": "2026-09-16T14:17:00.061+00:00"
+   }
+  ],
+  "interest": [
+   {
+    "id": "334cf32a-a030-419a-9aee-908198b84eb0",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "interest",
+    "key": "웨어러블 센싱",
+    "value": "interested",
+    "confidence": 0.5,
+    "effective_confidence": 0.4704,
+    "uncertainty": 0.5295,
+    "status": "active",
+    "lifecycle": "profile_hypothesis",
+    "source_type": "profile",
+    "source_id": "profile:research_topics[0]",
+    "source_turn_index": null,
+    "evidence_ids": [
+     "99a4c30d-9a3c-424d-ab07-b77bf094160f"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "profile",
+    "reason": "Profile prior (uncertain hypothesis).",
+    "created_at": "2026-09-16T14:17:00.056+00:00",
+    "updated_at": "2026-09-16T14:17:00.056+00:00"
+   }
+  ],
+  "goal": [],
+  "connection": [
+   {
+    "id": "5b0ff154-13b8-4052-b59d-0b1f90770659",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "connection",
+    "key": "웨어러블 센싱",
+    "value": "relevant",
+    "confidence": 0.45,
+    "effective_confidence": 0.4234,
+    "uncertainty": 0.5766,
+    "status": "active",
+    "lifecycle": "profile_hypothesis",
+    "source_type": "profile",
+    "source_id": "profile:research_topics[0]",
+    "source_turn_index": null,
+    "evidence_ids": [
+     "75d5e37f-0bca-453f-9d53-791fddc23111"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "profile",
+    "reason": "Profile prior (uncertain hypothesis).",
+    "created_at": "2026-09-16T14:17:00.056+00:00",
+    "updated_at": "2026-09-16T14:17:00.056+00:00"
+   }
+  ],
+  "concern": [
+   {
+    "id": "27a58258-a1bd-4b75-bc5e-4f6686e9d961",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "concern",
+    "key": "privacy",
+    "value": "raised",
+    "confidence": 0.9,
+    "effective_confidence": 0.9,
+    "uncertainty": 0.1,
+    "status": "active",
+    "lifecycle": "explicitly_confirmed",
+    "source_type": "conversation",
+    "source_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "source_turn_index": 3,
+    "evidence_ids": [
+     "6b69b133-5246-4139-82dc-7e776c9e9272"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "explicit",
+    "reason": "Listener asked about privacy-related issues.",
+    "created_at": "2026-09-16T14:17:00.065+00:00",
+    "updated_at": "2026-09-16T14:17:00.065+00:00"
+   }
+  ],
+  "explanation_level": [
+   {
+    "id": "d86370e1-f25f-4065-ad4a-366c0dd6bc2c",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "explanation_level",
+    "key": "preferred",
+    "value": "simple",
+    "confidence": 0.3,
+    "effective_confidence": 0.3,
+    "uncertainty": 0.7,
+    "status": "active",
+    "lifecycle": "conversation_supported",
+    "source_type": "conversation",
+    "source_id": "ab449313-9a36-4563-ba43-7a5492016f30",
+    "source_turn_index": 2,
+    "evidence_ids": [
+     "f76aab3b-3e51-4d77-8407-93a394c4653f"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "weak_inference",
+    "reason": "Self-reported unfamiliarity suggests a simpler explanation may help.",
+    "created_at": "2026-09-16T14:17:00.061+00:00",
+    "updated_at": "2026-09-16T14:17:00.061+00:00"
+   }
+  ],
+  "engagement": [],
+  "unresolved_issue": [
+   {
+    "id": "374f7092-8b60-4bde-95a5-2cae37dcf4ed",
+    "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+    "dimension": "unresolved_issue",
+    "key": "privacy",
+    "value": "open",
+    "confidence": 0.5,
+    "effective_confidence": 0.5,
+    "uncertainty": 0.5,
+    "status": "active",
+    "lifecycle": "conversation_supported",
+    "source_type": "conversation",
+    "source_id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+    "source_turn_index": 3,
+    "evidence_ids": [
+     "8e11231c-e55c-4b05-8fd0-3ed862ad4aa5"
+    ],
+    "support_count": 1,
+    "contradict_count": 0,
+    "pending_value": null,
+    "last_evidence_type": "behavioral",
+    "reason": "The privacy question has not been answered yet.",
+    "created_at": "2026-09-16T14:17:00.065+00:00",
+    "updated_at": "2026-09-16T14:17:00.065+00:00"
+   }
+  ]
+ },
+ "unknown_dimensions": [
+  "knowledge",
+  "goal",
+  "engagement"
+ ],
+ "overall_uncertainty": 0.6118,
+ "listener_turns_observed": 2,
+ "notice": "Beliefs are uncertain, evidence-backed hypotheses limited to explaining this paper. They are not judgments about the person."
+}

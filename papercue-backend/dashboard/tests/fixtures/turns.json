@@ -1,0 +1,35 @@
+[
+ {
+  "id": "d441825a-4fba-4346-93c4-134ef5db544d",
+  "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+  "turn_index": 1,
+  "speaker": "presenter",
+  "text": "안녕하세요. 이 포스터는 발표자에게 짧은 단서를 주는 PaperCue 시스템에 관한 것입니다.",
+  "spoken_at": "2026-09-16T14:17:00.057+00:00",
+  "input_source": "text",
+  "analysis_status": "ok",
+  "created_at": "2026-09-16T14:17:00.057+00:00"
+ },
+ {
+  "id": "ab449313-9a36-4563-ba43-7a5492016f30",
+  "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+  "turn_index": 2,
+  "speaker": "listener",
+  "text": "I'm not familiar with language models.",
+  "spoken_at": "2026-09-16T14:17:00.059+00:00",
+  "input_source": "text",
+  "analysis_status": "ok",
+  "created_at": "2026-09-16T14:17:00.059+00:00"
+ },
+ {
+  "id": "0b2a6fc6-685c-4312-ba4a-455193dfe528",
+  "session_id": "9caeb539-9d24-4b62-b714-b479a53a3948",
+  "turn_index": 3,
+  "speaker": "listener",
+  "text": "이 대화가 서버에 저장되는 건가요?",
+  "spoken_at": "2026-09-16T14:17:00.064+00:00",
+  "input_source": "text",
+  "analysis_status": "ok",
+  "created_at": "2026-09-16T14:17:00.064+00:00"
+ }
+]
