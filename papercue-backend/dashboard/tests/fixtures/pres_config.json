@@ -1,0 +1,77 @@
+{
+ "defaults": {
+  "seed": 7,
+  "judge_provider": "mock",
+  "prompt_provider": "template",
+  "retriever": "keyword",
+  "judge_noise": 0.0
+ },
+ "judge_is_mock": true,
+ "ollama_model": "qwen2.5:7b-instruct",
+ "data_dir": "./sample_data/presentation",
+ "synthetic_data": true,
+ "judge_weights": {
+  "severity": 0.28,
+  "urgency": 0.22,
+  "essentialness": 0.14,
+  "knowledge_support": 0.1,
+  "persistence": 0.08,
+  "expected_benefit": 0.1,
+  "self_recovery_likelihood": -0.25,
+  "distraction_risk": -0.2
+ },
+ "judge_thresholds": {
+  "intervene": 0.36,
+  "wait": 0.12,
+  "min_confidence": 0.5,
+  "cooldown_short_s": 30.0,
+  "cooldown_medium_s": 40.0,
+  "redundancy_window_s": 90.0,
+  "override_severity": 0.85
+ },
+ "detector_params": {
+  "fast_ratio": 1.25,
+  "slow_ratio": 0.8,
+  "rushed_slide_fraction": 0.45,
+  "at_risk_slide_fraction": 0.8,
+  "silence_seconds": 3.0,
+  "confusion_level": 0.6,
+  "low_attention": 0.35,
+  "time_ratio": 0.8,
+  "time_watch_remaining_s": 240.0,
+  "wrap_up_remaining_s": 75.0,
+  "wrap_up_ratio": 0.55,
+  "filler_event_min": 3.0,
+  "filler_window_min": 8.0,
+  "phrase_window_min": 3.0,
+  "window_events": 3.0
+ },
+ "memory": {
+  "weights": {
+   "relevance": 0.5,
+   "importance": 0.25,
+   "recency": 0.25
+  },
+  "recency_decay": 0.995,
+  "top_k": 4,
+  "min_score": 0.3,
+  "reflection_threshold": 1.2
+ },
+ "outcome_rules": {
+  "content_reminder": "recovered when the target key point is mentioned",
+  "next_point_suggestion": "recovered when the target key point is mentioned",
+  "silence_recovery": "recovered when speech resumes (and the cue is mentioned, if it had one)",
+  "pace_adjustment": "recovered when the rate returns within 15% of typical; partial when it moves toward typical",
+  "repetition_alert": "recovered when fillers drop to the typical level without the repeated phrase",
+  "clarification_suggestion": "recovered when audience confusion falls to 0.4 or below; partial when it drops",
+  "question_reinterpretation": "recovered when the answer contains the expected answer keywords",
+  "answer_structure": "recovered when the answer contains the expected answer keywords",
+  "time_management": "recovered when the presenter advances a slide or the time budget improves",
+  "wrap_up": "recovered when the presenter reaches the final slide"
+ },
+ "outcome_window": {
+  "seconds": 50.0,
+  "events": 3
+ },
+ "log_dir_enabled": false
+}

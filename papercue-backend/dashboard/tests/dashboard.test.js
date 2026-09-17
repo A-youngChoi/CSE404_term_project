@@ -30,8 +30,9 @@ describe("Korean labels", () => {
   });
 
   it("has Korean navigation for every page", () => {
-    const names = ROUTES.map((r) => ko.nav[r.key]);
-    expect(names).toEqual(["시스템 개요", "논문 지식 구조", "세션 작업 공간", "진화하는 청중 모델", "턴별 처리 과정", "단서 생성 분석", "시스템 동작 이해하기"]);
+    const names = ROUTES.filter((r) => !r.hidden).map((r) => ko.nav[r.key]);
+    expect(names).toEqual(["시스템 개요", "논문 지식 구조", "세션 작업 공간", "진화하는 청중 모델", "턴별 처리 과정", "단서 생성 분석", "시스템 동작 이해하기",
+      "발표 세션 개요", "발표 시뮬레이션 실험실", "발표 지원 평가"]);
     expect(parseHash("#/trace/abc/def")).toMatchObject({ route: { key: "trace" }, params: ["abc", "def"] });
   });
 
