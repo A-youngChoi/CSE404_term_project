@@ -35,6 +35,7 @@ def settings(tmp_path: Path) -> Settings:
         llm_provider="mock",
         embedding_provider="hashing",
         dashboard_dist_dir=tmp_path / "no-dist",
+        presentation_log_dir=tmp_path / "presentation_logs",
     )
 
 
