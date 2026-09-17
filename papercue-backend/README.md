@@ -5,7 +5,7 @@ PaperCue is a speaker-side augmentation research prototype. A researcher explain
 > **Research prototype. For consented research testing only - not for covert listening.**
 > Every session requires `consent_confirmed: true`. All processing and storage stay on this computer.
 
-Korean documentation: [`docs/KO_IMPLEMENTATION_GUIDE.md`](docs/KO_IMPLEMENTATION_GUIDE.md) · changelog [`docs/KO_CHANGELOG.md`](docs/KO_CHANGELOG.md)
+Korean documentation: [`docs/KO_IMPLEMENTATION_GUIDE.md`](docs/KO_IMPLEMENTATION_GUIDE.md) · presentation simulation [`docs/KO_PRESENTATION_SIMULATION.md`](docs/KO_PRESENTATION_SIMULATION.md) · changelog [`docs/KO_CHANGELOG.md`](docs/KO_CHANGELOG.md)
 Design: [`ARCHITECTURE.md`](ARCHITECTURE.md) · [`PRIVACY.md`](PRIVACY.md) · [`THREAT_MODEL.md`](THREAT_MODEL.md)
 
 ## What this MVP does
@@ -17,9 +17,44 @@ Design: [`ARCHITECTURE.md`](ARCHITECTURE.md) · [`PRIVACY.md`](PRIVACY.md) · [`
 - Records a structured trace for every turn and cue request (IDs, statuses, scores, short rationales, latencies; no hidden reasoning, no duplicated utterances).
 - Ships a Korean researcher dashboard to inspect all of the above.
 
+## Presentation-support simulation (adaptive prompting prototype)
+
+A second, independent subsystem (`app/presentation/`) simulates **live presentation support**: the system watches a talk
+and decides by itself whether, when and how to show the presenter a short prompt on a phone. There is no presenter input
+and no human moderator. Everything runs on synthetic data:
+
+```text
+event stream ─► presentation context ─► outcome check ─► memory (working/episodic/semantic/intervention/reflection)
+             ─► presenter user model ─► knowledge retrieval (RAG) ─► Judge ─► prompt generator ─► mobile ─► evaluation
+```
+
+- **Dataset** (`sample_data/presentation/`, see its README): 2 fictional knowledge bases (English, Korean), 6 fictional
+  presenters, 14 sessions / 115 timestamped events covering stable talks, missed content, slow/fast pace, fillers,
+  silence, audience confusion, Q&A misunderstanding, helpful and unnecessary prompts, suppression, time pressure, and two
+  blind edge cases. Ground truth is split from the observable events and only the evaluator reads it.
+- **Judge** returns `INTERVENE_NOW`, `WAIT_AND_OBSERVE`, `DO_NOT_INTERVENE` or `SUPPRESS_DUE_TO_RECENT_INTERVENTION` with
+  severity, urgency, confidence, evidence event/memory/knowledge IDs, user-model attributes, supporting and counter
+  reasons, a weighted score breakdown with evidence links, and the cooldown state. No chain-of-thought is requested or
+  stored.
+- **Modes.** `PRESENTATION_JUDGE_PROVIDER=mock` (default, rule-based, no model) or `ollama` (local LLM with ID
+  validation, a code-enforced recency policy, and rule-based fallback). `PRESENTATION_PROMPT_PROVIDER=template|ollama`,
+  `PRESENTATION_RETRIEVER=keyword|embedding`, `PRESENTATION_SEED` for reproducible runs. Per-run overrides are possible
+  from the dashboard and the API.
+- **Dashboard pages:** 발표 세션 개요 (`#/presentation`), 발표 시뮬레이션 실험실 (`#/lab/<session>[/play | /<step>/<tab>]`),
+  발표 지원 평가 (`#/evaluation`), and the presenter phone view `#/mobile` (open it in a second tab or on a phone
+  browser pointed at the same local server).
+- **API** (prefix `/api/v1/presentation`): `GET /config`, `GET /sessions`, `GET /sessions/{id}`, `GET /knowledge`, `POST /runs`, `GET /runs/{id}`, `POST /runs/{id}/step|seek|reset|complete|playback`, `GET /runs/{id}/mobile|evaluation|export`, `GET /mobile` (most recently used run), `GET /evaluation`.
+- **CLI:** `python scripts/presentation_sim.py [--session ID] [--trace] [--judge ollama] [--out DIR]`.
+- **Logs for future models:** completed runs are written to `PRESENTATION_LOG_DIR` as JSONL (features, decision, prompt,
+  outcome, labels).
+
+With the default configuration the mock Judge scores precision 0.93 / recall 0.93 over the 14 sessions (1 FP and 1 FN,
+both in the blind edge cases). These are heuristic numbers on synthetic data whose first 12 sessions were written
+alongside the thresholds; they are **not** a validation result.
+
 ## What it deliberately does not do
 
-No mobile app, microphone, ASR, diarization, TTS, earbud control, web scraping, Google Scholar, cloud deployment, internet authentication, always-on listening, reinforcement learning, or psychological profiling. Adapter interfaces for later mobile/ASR/TTS work are in `app/adapters/interfaces.py`.
+No native mobile app (the presenter view is a responsive web page), microphone, ASR, diarization, TTS, earbud control, web scraping, Google Scholar, cloud deployment, internet authentication, always-on listening, reinforcement learning, or psychological profiling. Adapter interfaces for later mobile/ASR/TTS work are in `app/adapters/interfaces.py`.
 
 ## Requirements
 
@@ -88,13 +123,13 @@ The server refuses to start on a non-loopback host unless `PAPERCUE_ALLOW_NON_LO
 ## Tests
 
 ```bash
-python -m pytest                        # backend: 73 tests
-cd dashboard && npm test                # dashboard: 27 tests (includes a production build)
+python -m pytest                        # backend: 94 tests
+cd dashboard && npm test                # dashboard: 47 tests (includes a production build)
 npm run build                           # production build into dashboard/dist
 python scripts/security_check.py        # staged-diff secret/data scan (uses gitleaks if installed)
 ```
 
-To regenerate dashboard fixtures from the real backend: `python scripts/export_dashboard_fixtures.py`.
+To regenerate dashboard fixtures from the real backend: `python scripts/export_dashboard_fixtures.py` (add `--presentation-only` to refresh only the simulation fixtures).
 
 ## Demonstration
 

@@ -88,3 +88,29 @@ A profile describes what someone *has worked on*, not what they know or want *no
 - Korean strings live in `src/i18n/ko.js`.
 - `src/explain.js` converts stored structured records into Korean sentences. It never uses model reasoning.
 - All data is rendered with `textContent`.
+
+## Presentation-support simulation (`app/presentation/`)
+
+A separate pipeline for proactive support during a talk. It shares configuration, the Ollama provider, the embedder,
+logging and the dashboard shell with the listener-cue pipeline, but none of its state.
+
+| Module | File | Role |
+|---|---|---|
+| Schemas | `schemas.py` | observed events, ground truth (separate), issues, context, memory items and changes, user-model attributes and changes, Judge decision, prompts, mobile state, step record |
+| Dataset | `dataset.py` | loads `sample_data/presentation`, derives timestamps / slide content / remaining time, strips ground truth |
+| Input adapters | `inputs.py` | `EventSource`, `TranscriptSource`, `SlideTracker`, `AudienceSignalSource`, `PresenterSignalSource`, `PromptDeliverer`; today only `DatasetEventSource` |
+| Context | `context.py` | coverage of must-mention key points, slide timing and schedule lag, time budget, speech rate vs the user model, fillers, silence, audience signals, Q&A matching; persistent issues keyed by type + target (`DETECTOR_PARAMS`) |
+| Memory | `memory.py` | working / episodic / semantic / intervention / reflection items with metadata; retrieval score = 0.5 relevance + 0.25 importance + 0.25 recency (0.995^s); rule-based reflections; every change logged with before/after |
+| User model | `user_model.py` | profile priors → observed values with confidence, evidence and history (robust speech-rate EMA, tension and load, difficulties, missed content, prompt length, responsiveness Beta(1,1), effective/disruptive contexts) |
+| Retrieval | `knowledge.py` | `KnowledgeRetriever` protocol; `KeywordRetriever` and `EmbeddingRetriever`; slide/target/category boosts; marks used vs unused chunks |
+| Judge | `judge.py` | `rank_issues`, weighted utility (`WEIGHTS`), thresholds, cooldown and redundancy policy; `RuleBasedJudge` (mock) and `OllamaJudge` (validated, policy-enforced, rule fallback) |
+| Prompts | `prompt_generator.py` | Korean/English templates filled from knowledge cues, three scored candidates, personalisation from the user model, optional local-LLM rewording with validation |
+| Outcome | `outcome.py` | infers recovery from later events only (rules in `RULES_DOC`) |
+| Engine | `engine.py` | per-event stages with timing and error isolation, delivery to the mobile state, timeline marks; deterministic reset/seek |
+| Evaluation | `evaluation.py` | tolerance-window matching, precision/recall/F1, interruption and missed-critical rates, delay, recovery, prompt-type and decision agreement, language/scenario/type slices (`METHOD`) |
+| Service / API | `service.py`, `app/api/routes_presentation.py` | in-memory run registry (LRU), playback state shared with the mobile view, batch evaluation cache, JSONL export |
+
+Replacing the synthetic inputs: implement the protocols in `inputs.py`, assemble `ObservedEvent`s (the loader shows
+which fields are derived), and feed them to `SimulationRun` through an `EventSource` that yields events as they arrive
+instead of by index. Detectors in `context.py` assume the current signal semantics (speech rate in wpm/spm, silence in
+seconds, audience attention/confusion in 0-1); a real sensor needs calibration of `DETECTOR_PARAMS`.
