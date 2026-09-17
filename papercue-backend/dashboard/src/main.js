@@ -10,6 +10,10 @@ import { renderAudience } from "./pages/audience.js";
 import { renderTrace } from "./pages/trace.js";
 import { renderCues } from "./pages/cues.js";
 import { renderGuide } from "./pages/guide.js";
+import { renderPresentation } from "./pages/presentation.js";
+import { renderLab } from "./pages/lab.js";
+import { renderEvaluation } from "./pages/evaluation.js";
+import { renderMobile } from "./pages/mobile.js";
 
 export const ROUTES = [
   { key: "overview", render: renderOverview },
@@ -19,6 +23,11 @@ export const ROUTES = [
   { key: "trace", render: renderTrace, needsSession: true },
   { key: "cues", render: renderCues, needsSession: true },
   { key: "guide", render: renderGuide },
+  { key: "presentation", render: renderPresentation, group: "presentation" },
+  { key: "lab", render: renderLab, group: "presentation" },
+  { key: "evaluation", render: renderEvaluation, group: "presentation" },
+  // Presenter phone view: no navigation shell, not listed in the menu.
+  { key: "mobile", render: renderMobile, bare: true, hidden: true },
 ];
 
 // Only the selected session ID is kept, in memory and in the URL hash - no participant data in browser storage.
@@ -66,7 +75,8 @@ function sessionSelector() {
   select.addEventListener("change", () => {
     setSession(select.value || null);
     const { route } = parseHash(location.hash);
-    navigate(route.key === "overview" || route.key === "papers" || route.key === "guide" ? "session" : route.key, ...(select.value ? [select.value] : []));
+    const keepsRoute = route.needsSession || route.key === "session";
+    navigate(keepsRoute ? route.key : "session", ...(select.value ? [select.value] : []));
   });
   const current = state.sessions.find((s) => s.session.id === state.sessionId)?.session;
   return h("div", { class: "session-select" }, select, current ? modeBadge(current.mock_mode, current.llm_model) : null);
@@ -76,10 +86,11 @@ function layout(activeKey) {
   const nav = h(
     "nav",
     { class: "nav", "aria-label": "주요 메뉴" },
-    ROUTES.map((r) => {
+    ROUTES.filter((r) => !r.hidden).map((r) => {
       const params = r.needsSession || r.key === "session" ? (state.sessionId ? [state.sessionId] : []) : [];
       const href = `#/${[r.key, ...params].map(encodeURIComponent).join("/")}`;
-      return h("a", { href, class: r.key === activeKey ? "active" : "", "aria-current": r.key === activeKey ? "page" : null }, ko.nav[r.key]);
+      const cls = [r.key === activeKey ? "active" : "", r.group === "presentation" ? "nav-pres" : ""].join(" ").trim();
+      return h("a", { href, class: cls, "aria-current": r.key === activeKey ? "page" : null }, ko.nav[r.key]);
     }),
   );
   const header = h(
@@ -97,10 +108,20 @@ let renderToken = 0;
 export async function render() {
   const token = ++renderToken;
   const { route, params } = parseHash(location.hash);
+  const root = document.getElementById("app");
+  if (route.bare) {
+    document.body.classList.add("bare");
+    try {
+      await route.render(root, params, {});
+    } catch (err) {
+      mount(root, errorNotice(err));
+    }
+    return;
+  }
+  document.body.classList.remove("bare");
   if ((route.needsSession || route.key === "session") && params[0]) setSession(params[0]);
   await refreshSessions();
   if (token !== renderToken) return;
-  const root = document.getElementById("app");
   const { shell, main } = layout(route.key);
   mount(root, shell);
   const ctx = { sessionId: state.sessionId, setSession, navigate, refreshSessions, params, rerender: render };

@@ -84,3 +84,27 @@ export const api = {
   traces: (id) => request("GET", `/sessions/${encodeURIComponent(id)}/traces`),
   turnTrace: (sid, tid) => request("GET", `/sessions/${encodeURIComponent(sid)}/turns/${encodeURIComponent(tid)}/trace`),
 };
+
+// Presentation-support simulation (synthetic data).
+const P = "/presentation";
+const run = (id) => `${P}/runs/${encodeURIComponent(id)}`;
+export const pres = {
+  config: () => request("GET", `${P}/config`),
+  sessions: () => request("GET", `${P}/sessions`),
+  session: (id) => request("GET", `${P}/sessions/${encodeURIComponent(id)}`),
+  knowledge: (kbId) => request("GET", `${P}/knowledge${kbId ? `?kb_id=${encodeURIComponent(kbId)}` : ""}`),
+  createRun: (body) => request("POST", `${P}/runs`, body),
+  run: (id) => request("GET", run(id)),
+  step: (id, count = 1) => request("POST", `${run(id)}/step`, { count }),
+  seek: (id, index) => request("POST", `${run(id)}/seek`, { index }),
+  reset: (id) => request("POST", `${run(id)}/reset`),
+  complete: (id) => request("POST", `${run(id)}/complete`),
+  playback: (id, playing, speed) => request("POST", `${run(id)}/playback`, { playing, speed }),
+  runMobile: (id) => request("GET", `${run(id)}/mobile`),
+  mobile: () => request("GET", `${P}/mobile`),
+  evaluation: (params = {}) => {
+    const q = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== undefined && v !== null && v !== ""));
+    return request("GET", `${P}/evaluation${q.toString() ? `?${q}` : ""}`);
+  },
+  exportRun: (id) => request("GET", `${run(id)}/export`),
+};
