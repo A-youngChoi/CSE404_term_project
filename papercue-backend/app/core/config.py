@@ -85,6 +85,21 @@ class Settings(BaseSettings):
     shadow_decision_on_turn: bool = True
     default_cue_language: Literal["ko", "en"] = "en"
 
+    # Presentation-support simulation (synthetic dataset, see app/presentation/)
+    presentation_data_dir: Path = Path(__file__).resolve().parents[2] / "sample_data" / "presentation"
+    # mock = deterministic rule-based Judge (no model needed) | ollama = local LLM Judge with rule fallback
+    presentation_judge_provider: Literal["mock", "ollama"] = "mock"
+    # template = fixed bilingual templates | ollama = local LLM rewording with template fallback
+    presentation_prompt_provider: Literal["template", "ollama"] = "template"
+    # keyword = lexical retrieval | embedding = local embedder (EMBEDDING_PROVIDER)
+    presentation_retriever: Literal["keyword", "embedding"] = "keyword"
+    presentation_seed: int = 7
+    # Optional seeded jitter on the mock Judge's utility (0 disables) for robustness checks.
+    presentation_judge_noise: float = Field(default=0.0, ge=0.0, le=0.2)
+    presentation_max_runs: int = Field(default=20, ge=1, le=200)
+    presentation_write_logs: bool = True
+    presentation_log_dir: Path = Path("./data/presentation_logs")
+
     # Debug
     debug_store_prompts: bool = False
     log_level: str = "INFO"

@@ -127,9 +127,44 @@ CUE_GENERATION = PromptTemplate(
     ),
 )
 
+PRESENTATION_JUDGE = PromptTemplate(
+    task="presentation_judge",
+    version=VERSION,
+    system=(
+        "You decide whether a live-presentation support system should show the presenter a private prompt right "
+        "now. Interrupting has a cost: only intervene when the problem is real, matters for the talk, and the "
+        "presenter is unlikely to recover alone. " + _DATA_RULE + " " + _PRIVACY_RULE
+    ),
+    instructions=(
+        "Using the observed signals, the candidate issue, the deterministic features, retrieved memories and "
+        "knowledge, the presenter model, and recent prompts, return JSON with: decision (one of allowed_decisions), "
+        "detected_issue (the candidate issue type or 'none'), severity, urgency and confidence (0-1), "
+        "evidence_event_ids, used_memory_ids and used_knowledge_ids (only ids present in the input), "
+        "supporting_reasons and counter_reasons (at most 3 short sentences each, observable facts only), "
+        "reason_for_final_decision (one sentence), recommended_prompt_type (one of allowed_prompt_types or null) and "
+        "recommended_prompt_length ('short' or 'medium'). Prefer WAIT_AND_OBSERVE when the presenter may still "
+        "recover, and SUPPRESS_DUE_TO_RECENT_INTERVENTION when a prompt was shown seconds ago."
+    ),
+)
+
+PRESENTATION_PROMPT = PromptTemplate(
+    task="presentation_prompt",
+    version=VERSION,
+    system=(
+        "You reword a glanceable prompt for a presenter's phone during a live talk. " + _DATA_RULE + " "
+        + _PRIVACY_RULE
+    ),
+    instructions=(
+        "Rewrite template_text in the given language (Korean for 'ko', English for 'en') so it can be understood in "
+        "one glance: at most 8 words, no full sentences to read aloud, keep the facts in slots unchanged, add no "
+        "new facts. Return {\"text\": \"...\"}."
+    ),
+)
+
 PROMPTS: dict[str, PromptTemplate] = {
     p.task: p
-    for p in (PAPER_UNIT_LABELING, CONVERSATION_STATE, EVIDENCE_EXTRACTION, AUDIENCE_UPDATE, CUE_GENERATION)
+    for p in (PAPER_UNIT_LABELING, CONVERSATION_STATE, EVIDENCE_EXTRACTION, AUDIENCE_UPDATE, CUE_GENERATION,
+              PRESENTATION_JUDGE, PRESENTATION_PROMPT)
 }
 
 

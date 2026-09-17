@@ -12,6 +12,7 @@ from app.repositories.conversation import ConversationRepository
 from app.repositories.cues import CueRepository, TraceRepository
 from app.repositories.papers import PaperRepository
 from app.repositories.sessions import AuditRepository, SessionRepository
+from app.presentation.service import PresentationService
 from app.services.audience_model import AudienceModelService
 from app.services.conversation_tracker import ConversationTracker
 from app.services.cue_decision import CueDecisionEngine
@@ -61,6 +62,7 @@ class Container:
             self.conversation_repo, self.audience_repo, self.cues_repo, self.traces_repo, self.tracker,
             self.extractor, self.audience, self.retrieval, self.decision, self.generator,
         )
+        self.presentation = PresentationService(settings, self.providers, self.embedder)
         self.status = SystemStatusService(settings, self.db, self.providers, self.embedder, self.traces_repo)
 
     def _debug_sink(self, task: str, prompt: str, response: str | None) -> None:

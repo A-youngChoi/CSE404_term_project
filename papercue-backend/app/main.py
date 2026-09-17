@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.api import routes_papers, routes_sessions, routes_system
+from app.api import routes_papers, routes_presentation, routes_sessions, routes_system
 from app.core.config import Settings, get_settings
 from app.core.errors import PaperCueError
 from app.core.logging import configure_logging, get_logger
@@ -96,6 +96,7 @@ def create_app(settings: Settings | None = None, container: Container | None = N
     app.include_router(routes_system.router, prefix=API_PREFIX)
     app.include_router(routes_papers.router, prefix=API_PREFIX)
     app.include_router(routes_sessions.router, prefix=API_PREFIX)
+    app.include_router(routes_presentation.router, prefix=API_PREFIX)
 
     dist = Path(settings.dashboard_dist_dir)
     if (dist / "index.html").is_file():
