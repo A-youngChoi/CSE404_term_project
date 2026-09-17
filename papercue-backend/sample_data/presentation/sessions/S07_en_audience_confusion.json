@@ -1,0 +1,26 @@
+{
+  "session_id": "S07_en_audience_confusion",
+  "title": "Audience confused by jargon",
+  "title_ko": "청중의 혼란 또는 낮은 반응이 감지된 발표",
+  "language": "en",
+  "scenario_type": "audience_confusion",
+  "presenter_id": "presenter_en_b",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-07T15:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 120,
+  "description": "Audience confusion rises while the presenter stacks jargon ('regression rate'). The system waits for one event, then suggests a plain definition. A later brief confusion is resolved by the presenter alone.",
+  "events": [
+    {"event_id": "S07_e01", "elapsed_time": 125, "current_slide": 3, "transcript_chunk": "GazeFlow's webcam gaze tracker detects regressions in real time.", "speech_rate": 145, "audience_signal": {"attention": 0.7, "confusion": 0.45, "reaction": "neutral"}, "presenter_state": {"arousal": 0.4}},
+    {"event_id": "S07_e02", "elapsed_time": 160, "current_slide": 3, "transcript_chunk": "Regressions over dense terms trigger glossary pop-ups, and we threshold the regression rate per line.", "speech_rate": 150, "audience_signal": {"attention": 0.55, "confusion": 0.68, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.42},
+     "ground_truth": {"issue": "audience_confusion", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "medium", "target": "gf_term_01", "note": "First clear sign of confusion."}},
+    {"event_id": "S07_e03", "elapsed_time": 190, "current_slide": 3, "transcript_chunk": "The regression rate is then smoothed with a sliding window before adaptation fires.", "speech_rate": 152, "audience_signal": {"attention": 0.45, "confusion": 0.78, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "audience_confusion", "expected_intervention": true, "expected_prompt_type": "clarification_suggestion", "severity": "high", "target": "gf_term_01", "note": "Sustained confusion about 'regression'."}},
+    {"event_id": "S07_e04", "elapsed_time": 205, "current_slide": 3, "transcript_chunk": "Let me step back: a regression simply means your eyes jump back to re-read a word.", "speech_rate": 138, "audience_signal": {"attention": 0.7, "confusion": 0.35, "reaction": "nodding"}, "presenter_state": {"arousal": 0.4},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S07_e05", "elapsed_time": 230, "current_slide": 4, "transcript_chunk": "We compared 24 participants against a baseline without adaptation, within-subjects.", "speech_rate": 140, "audience_signal": {"attention": 0.72, "confusion": 0.2, "reaction": "neutral"}, "presenter_state": {"arousal": 0.38}},
+    {"event_id": "S07_e06", "elapsed_time": 300, "current_slide": 5, "transcript_chunk": "Comprehension improved 18%, and NASA-TLX workload was lower.", "speech_rate": 143, "audience_signal": {"attention": 0.6, "confusion": 0.55, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.38},
+     "ground_truth": {"issue": "audience_confusion", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "target": "gf_term_02", "note": "A single, moderate sign; the presenter usually explains terms."}},
+    {"event_id": "S07_e07", "elapsed_time": 330, "current_slide": 5, "transcript_chunk": "NASA-TLX is just a standard workload questionnaire, and reading time did not change.", "speech_rate": 140, "audience_signal": {"attention": 0.72, "confusion": 0.25, "reaction": "nodding"}, "presenter_state": {"arousal": 0.36}}
+  ]
+}

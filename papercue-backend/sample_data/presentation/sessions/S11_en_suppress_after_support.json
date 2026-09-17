@@ -1,0 +1,28 @@
+{
+  "session_id": "S11_en_suppress_after_support",
+  "title": "Already supported: hold back",
+  "title_ko": "이미 한 번 지원했기 때문에 추가 개입을 억제해야 하는 경우",
+  "language": "en",
+  "scenario_type": "suppress_after_support",
+  "presenter_id": "presenter_en_b",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-11T09:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 120,
+  "description": "After one pace prompt the presenter slows down gradually. Follow-up prompts for the same issue should be suppressed.",
+  "events": [
+    {"event_id": "S11_e01", "elapsed_time": 122, "current_slide": 3, "transcript_chunk": "GazeFlow uses a webcam to detect regressions and then triggers glossary pop-ups right away.", "speech_rate": 185, "presenter_state": {"arousal": 0.7},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "note": "First fast chunk."}},
+    {"event_id": "S11_e02", "elapsed_time": 140, "current_slide": 3, "transcript_chunk": "Everything runs locally, no video is stored, and the latency is under fifty milliseconds.", "speech_rate": 192, "presenter_state": {"arousal": 0.74}, "audience_signal": {"attention": 0.6, "confusion": 0.3, "reaction": "neutral"},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": true, "expected_prompt_type": "pace_adjustment", "severity": "medium", "note": "Sustained fast speech."}},
+    {"event_id": "S11_e03", "elapsed_time": 158, "current_slide": 3, "transcript_chunk": "So, that's the pipeline, and it is lightweight.", "speech_rate": 170, "presenter_state": {"arousal": 0.68},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "low", "note": "Just prompted 18 s ago and already slowing down."}},
+    {"event_id": "S11_e04", "elapsed_time": 178, "current_slide": 3, "transcript_chunk": "Let me show one example of a pop-up on a dense paragraph.", "speech_rate": 160, "presenter_state": {"arousal": 0.62},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S11_e05", "elapsed_time": 215, "current_slide": 4, "transcript_chunk": "We had 24 participants, within-subjects, versus a baseline without adaptation.", "speech_rate": 178, "presenter_state": {"arousal": 0.64},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "low", "note": "A short spike after an effective prompt; repeating the same prompt adds little."}},
+    {"event_id": "S11_e06", "elapsed_time": 240, "current_slide": 4, "transcript_chunk": "Each participant read two papers in each condition.", "speech_rate": 150, "presenter_state": {"arousal": 0.58}},
+    {"event_id": "S11_e07", "elapsed_time": 290, "current_slide": 5, "transcript_chunk": "Comprehension rose 18% with no extra reading time.", "speech_rate": 158, "presenter_state": {"arousal": 0.55}},
+    {"event_id": "S11_e08", "elapsed_time": 320, "current_slide": 5, "transcript_chunk": "And perceived workload on the TLX was lower.", "speech_rate": 150, "presenter_state": {"arousal": 0.52}}
+  ]
+}

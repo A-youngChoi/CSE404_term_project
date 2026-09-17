@@ -1,0 +1,25 @@
+{
+  "session_id": "S08_ko_qa_misunderstanding",
+  "title": "Answering a different question in Q&A",
+  "title_ko": "질의응답에서 질문 의도를 잘못 이해한 발표",
+  "language": "ko",
+  "scenario_type": "qa_misunderstanding",
+  "presenter_id": "presenter_ko_c",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-08T17:00:00+09:00",
+  "planned_duration_s": 600,
+  "excerpt_start_elapsed": 480,
+  "description": "위치 개인정보 질문에 정확도로 답한다. 질문 의도 재해석 단서 후 올바르게 답하고, 이후 질문에는 스스로 잘 답한다.",
+  "events": [
+    {"event_id": "S08_e01", "elapsed_time": 482, "current_slide": 8, "transcript_chunk": "이상입니다. 질문 받겠습니다.", "speech_rate": 320, "presenter_state": {"arousal": 0.35}},
+    {"event_id": "S08_e02", "elapsed_time": 490, "event_type": "audience_question", "current_slide": 8, "transcript_chunk": "", "speech_rate": 0, "audience_question": "참여자 위치 정보는 개인정보 문제가 없나요? 위치가 그대로 저장되면 위험할 것 같은데요.", "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "question"}, "presenter_state": {"arousal": 0.42}},
+    {"event_id": "S08_e03", "elapsed_time": 505, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "좋은 질문입니다. 보정 모델의 정확도는 기종별로 차이가 있는데, 평균 오차는 2.1dB 수준입니다.", "speech_rate": 325, "audience_signal": {"attention": 0.7, "confusion": 0.5, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "qa_misunderstanding", "expected_intervention": true, "expected_prompt_type": "question_reinterpretation", "severity": "high", "target": "sm_qa_01", "note": "위치 개인정보를 물었는데 정확도로 답했다."}},
+    {"event_id": "S08_e04", "elapsed_time": 518, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "아, 위치 말씀이시죠. 위치는 250m 격자 단위로만 저장해서 개인을 특정하기 어렵습니다.", "speech_rate": 318, "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.4},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S08_e05", "elapsed_time": 530, "event_type": "audience_question", "current_slide": 8, "transcript_chunk": "", "speech_rate": 0, "audience_question": "야간에 오차가 더 큰 이유는 뭔가요?", "audience_signal": {"attention": 0.78, "confusion": 0.1, "reaction": "question"}, "presenter_state": {"arousal": 0.38}},
+    {"event_id": "S08_e06", "elapsed_time": 540, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "소음 수준이 낮은 밤에는 마이크 자체 잡음의 비중이 커지기 때문입니다.", "speech_rate": 320, "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.35}},
+    {"event_id": "S08_e07", "elapsed_time": 552, "event_type": "audience_question", "current_slide": 8, "transcript_chunk": "", "speech_rate": 0, "audience_question": "공인 측정소와 비교하면 실제로 얼마나 정확한가요?", "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "question"}, "presenter_state": {"arousal": 0.35}},
+    {"event_id": "S08_e08", "elapsed_time": 565, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "보정 후 평균 오차는 2.1dB입니다. 보정 전보다 크게 줄었습니다.", "speech_rate": 322, "audience_signal": {"attention": 0.82, "confusion": 0.05, "reaction": "nodding"}, "presenter_state": {"arousal": 0.33}}
+  ]
+}

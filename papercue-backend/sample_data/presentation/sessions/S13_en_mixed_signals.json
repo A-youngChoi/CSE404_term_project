@@ -1,0 +1,24 @@
+{
+  "session_id": "S13_en_mixed_signals",
+  "title": "Edge case: rambling Q&A answer with mixed signals",
+  "title_ko": "경계 사례: 신호가 섞인 질의응답에서 장황한 답변",
+  "language": "en",
+  "scenario_type": "edge_case",
+  "presenter_id": "presenter_en_c",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-13T16:30:00+09:00",
+  "planned_duration_s": 600,
+  "excerpt_start_elapsed": 435,
+  "description": "Blind check added after the detector thresholds were fixed. The answer mentions an expected keyword but rambles, so keyword matching may treat it as on-topic.",
+  "events": [
+    {"event_id": "S13_e01", "elapsed_time": 438, "current_slide": 7, "transcript_chunk": "To wrap up: attention-aware documents are feasible today, and next is a field deployment.", "speech_rate": 190, "audience_signal": {"attention": 0.75, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "note": "Fast, but it is the closing line."}},
+    {"event_id": "S13_e02", "elapsed_time": 470, "event_type": "audience_question", "current_slide": 8, "transcript_chunk": "", "speech_rate": 0, "audience_question": "Does it work for people reading in a second language?", "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "question"}, "presenter_state": {"arousal": 0.5}},
+    {"event_id": "S13_e03", "elapsed_time": 482, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "Great question. So the glossary pop-ups, and also, um, the regression detection, and the webcam, it runs at thirty frames, and there are many parameters we tuned...", "speech_rate": 175, "filler_count": 2, "audience_signal": {"attention": 0.5, "confusion": 0.55, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "qa_misunderstanding", "expected_intervention": true, "expected_prompt_type": "answer_structure", "severity": "medium", "target": "gf_qa_03", "note": "The answer drifts into implementation details instead of answering yes/no plus one reason."}},
+    {"event_id": "S13_e04", "elapsed_time": 500, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "In short, the glossary helps with unfamiliar terms, and a study with non-native readers is future work.", "speech_rate": 150, "audience_signal": {"attention": 0.75, "confusion": 0.2, "reaction": "nodding"}, "presenter_state": {"arousal": 0.5}},
+    {"event_id": "S13_e05", "elapsed_time": 510, "event_type": "audience_question", "current_slide": 8, "transcript_chunk": "", "speech_rate": 0, "audience_question": "What happens in a dark room?", "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "question"}, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S13_e06", "elapsed_time": 522, "event_type": "qa_answer", "current_slide": 8, "transcript_chunk": "In a dark room the webcam accuracy drops, which is our main limitation.", "speech_rate": 148, "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.4}},
+    {"event_id": "S13_e07", "elapsed_time": 540, "current_slide": 8, "transcript_chunk": "Thanks, everyone.", "speech_rate": 150, "audience_signal": {"attention": 0.8, "confusion": 0.05, "reaction": "applause"}, "presenter_state": {"arousal": 0.35}}
+  ]
+}

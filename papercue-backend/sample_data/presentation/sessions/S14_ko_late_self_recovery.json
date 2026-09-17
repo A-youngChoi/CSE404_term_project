@@ -1,0 +1,26 @@
+{
+  "session_id": "S14_ko_late_self_recovery",
+  "title": "Edge case: presenter fills the gap one sentence later",
+  "title_ko": "경계 사례: 한 문장 뒤에 스스로 보충하는 발표",
+  "language": "ko",
+  "scenario_type": "edge_case",
+  "presenter_id": "presenter_ko_b",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-14T10:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 210,
+  "description": "임계값을 고정한 뒤 추가한 블라인드 점검용 세션. 슬라이드 전환 시 누락된 내용을 다음 문장에서 스스로 보충하고(사후 판단상 개입 불필요), 용어가 없는 청중 혼란이 이어진다.",
+  "events": [
+    {"event_id": "S14_e01", "elapsed_time": 212, "current_slide": 4, "transcript_chunk": "실험 설계입니다. 기준선은 보정하지 않은 원시 측정값입니다.", "speech_rate": 345, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S14_e02", "elapsed_time": 250, "current_slide": 4, "transcript_chunk": "측정 기간은 3주였습니다.", "speech_rate": 340, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S14_e03", "elapsed_time": 280, "current_slide": 5, "transcript_chunk": "결과입니다. 오차가 크게 줄었는데요,", "speech_rate": 342, "presenter_state": {"arousal": 0.48},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "medium", "target": "kp_sm_4b", "note": "사후 판단: 다음 문장에서 스스로 보충했으므로 개입이 필요 없었다."}},
+    {"event_id": "S14_e04", "elapsed_time": 292, "current_slide": 5, "transcript_chunk": "먼저 말씀드리면 비교 대상은 공인 측정소 18곳이었고, 평균 오차는 2.1dB까지 줄었습니다.", "speech_rate": 338, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S14_e05", "elapsed_time": 330, "current_slide": 5, "transcript_chunk": "야간 오차는 조금 더 큽니다.", "speech_rate": 336, "audience_signal": {"attention": 0.6, "confusion": 0.62, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "audience_confusion", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low"}},
+    {"event_id": "S14_e06", "elapsed_time": 345, "current_slide": 5, "transcript_chunk": "야간에는 소음 수준이 낮아서 그렇습니다.", "speech_rate": 335, "audience_signal": {"attention": 0.5, "confusion": 0.66, "reaction": "puzzled"}, "presenter_state": {"arousal": 0.5},
+     "ground_truth": {"issue": "audience_confusion", "expected_intervention": true, "expected_prompt_type": "clarification_suggestion", "severity": "medium", "note": "혼란이 이어지는데 설명이 짧다. 예시로 풀어 줄 필요가 있다."}},
+    {"event_id": "S14_e07", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "한계는 주머니 속 측정입니다.", "speech_rate": 340, "audience_signal": {"attention": 0.7, "confusion": 0.3, "reaction": "neutral"}, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S14_e08", "elapsed_time": 430, "current_slide": 7, "transcript_chunk": "결론적으로 저비용 소음 지도가 가능합니다.", "speech_rate": 340, "presenter_state": {"arousal": 0.4}}
+  ]
+}

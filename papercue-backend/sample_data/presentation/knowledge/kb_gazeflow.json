@@ -1,0 +1,508 @@
+{
+  "kb_id": "kb_gazeflow",
+  "language": "en",
+  "synthetic": true,
+  "paper_title": "GazeFlow: Gaze-Adaptive Reading Support for Scientific Papers (synthetic example)",
+  "documents": [
+    {
+      "doc_id": "doc_gf_paper",
+      "title": "GazeFlow paper (synthetic)",
+      "doc_type": "paper"
+    },
+    {
+      "doc_id": "doc_gf_script",
+      "title": "Presentation script (synthetic)",
+      "doc_type": "script"
+    },
+    {
+      "doc_id": "doc_gf_slides",
+      "title": "Slide notes (synthetic)",
+      "doc_type": "slide_notes"
+    },
+    {
+      "doc_id": "doc_gf_qa",
+      "title": "Expected questions (synthetic)",
+      "doc_type": "expected_qa"
+    },
+    {
+      "doc_id": "doc_gf_glossary",
+      "title": "Glossary (synthetic)",
+      "doc_type": "glossary"
+    }
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Why reading papers is hard",
+      "planned_seconds": 60,
+      "note": "Open with the reading burden: researchers skim many papers and get stuck in dense passages.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_1a",
+          "text": "Researchers skim dozens of papers every week.",
+          "keywords": [
+            "dozens of papers",
+            "every week",
+            "skim"
+          ],
+          "essential": false,
+          "cue": "dozens of papers weekly",
+          "category": "background"
+        },
+        {
+          "kp_id": "kp_gf_1b",
+          "text": "Dense passages cause re-reading loops that waste time.",
+          "keywords": [
+            "re-reading",
+            "reread",
+            "dense passage"
+          ],
+          "essential": true,
+          "cue": "re-reading loops",
+          "category": "motivation"
+        }
+      ]
+    },
+    {
+      "slide": 2,
+      "title": "Problem: static PDFs ignore attention",
+      "planned_seconds": 60,
+      "note": "State the gap: a PDF cannot react to where the reader struggles; highlight tools need manual effort.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_2a",
+          "text": "Static PDFs cannot react to where the reader struggles.",
+          "keywords": [
+            "static pdf",
+            "cannot react",
+            "struggles"
+          ],
+          "essential": true,
+          "cue": "PDFs can't react",
+          "category": "problem"
+        },
+        {
+          "kp_id": "kp_gf_2b",
+          "text": "Existing highlighting tools require manual effort.",
+          "keywords": [
+            "manual",
+            "highlighting tools"
+          ],
+          "essential": false,
+          "cue": "manual highlighting",
+          "category": "related_work"
+        }
+      ]
+    },
+    {
+      "slide": 3,
+      "title": "GazeFlow method",
+      "planned_seconds": 90,
+      "note": "Explain webcam gaze tracking, regression detection, adaptive glossary pop-ups, and local processing.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_3a",
+          "text": "A webcam gaze tracker detects regressions, i.e. backward re-reading movements.",
+          "keywords": [
+            "webcam",
+            "regression",
+            "gaze track"
+          ],
+          "essential": true,
+          "cue": "webcam detects regressions",
+          "category": "method"
+        },
+        {
+          "kp_id": "kp_gf_3b",
+          "text": "Dense terms trigger adaptive glossary pop-ups.",
+          "keywords": [
+            "glossary",
+            "pop-up",
+            "popup"
+          ],
+          "essential": true,
+          "cue": "glossary pop-ups",
+          "category": "method"
+        },
+        {
+          "kp_id": "kp_gf_3c",
+          "text": "Everything runs locally and no video is stored.",
+          "keywords": [
+            "locally",
+            "no video",
+            "not stored"
+          ],
+          "essential": false,
+          "cue": "local, no video stored",
+          "category": "method"
+        }
+      ]
+    },
+    {
+      "slide": 4,
+      "title": "Study design",
+      "planned_seconds": 75,
+      "note": "Within-subjects study with 24 participants; baseline is the same reader without adaptation.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_4a",
+          "text": "Within-subjects study with 24 participants.",
+          "keywords": [
+            "24 participants",
+            "within-subjects",
+            "twenty-four"
+          ],
+          "essential": true,
+          "cue": "24 participants, within-subjects",
+          "category": "method"
+        },
+        {
+          "kp_id": "kp_gf_4b",
+          "text": "Baseline condition: the same PDF reader without adaptation.",
+          "keywords": [
+            "baseline",
+            "without adaptation"
+          ],
+          "essential": true,
+          "cue": "baseline = reader without adaptation",
+          "category": "baseline_comparison"
+        }
+      ]
+    },
+    {
+      "slide": 5,
+      "title": "Results",
+      "planned_seconds": 90,
+      "note": "Comprehension improved 18% over baseline; reading time unchanged; workload (NASA-TLX) lower.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_5a",
+          "text": "Comprehension improved by 18% over the baseline.",
+          "keywords": [
+            "18%",
+            "18 percent",
+            "eighteen percent"
+          ],
+          "essential": true,
+          "cue": "+18% comprehension",
+          "category": "result"
+        },
+        {
+          "kp_id": "kp_gf_5b",
+          "text": "Reading time did not increase.",
+          "keywords": [
+            "reading time",
+            "no slower",
+            "unchanged"
+          ],
+          "essential": false,
+          "cue": "reading time unchanged",
+          "category": "result"
+        },
+        {
+          "kp_id": "kp_gf_5c",
+          "text": "Perceived workload (NASA-TLX) was lower.",
+          "keywords": [
+            "workload",
+            "nasa-tlx",
+            "tlx"
+          ],
+          "essential": false,
+          "cue": "lower workload (TLX)",
+          "category": "result"
+        }
+      ]
+    },
+    {
+      "slide": 6,
+      "title": "Limitations",
+      "planned_seconds": 60,
+      "note": "Webcam accuracy drops in low light; only short lab sessions were tested.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_6a",
+          "text": "Webcam tracking accuracy drops in low light.",
+          "keywords": [
+            "low light",
+            "dim light",
+            "accuracy drops"
+          ],
+          "essential": true,
+          "cue": "low-light accuracy",
+          "category": "limitation"
+        },
+        {
+          "kp_id": "kp_gf_6b",
+          "text": "Only short lab sessions were studied.",
+          "keywords": [
+            "lab session",
+            "short sessions"
+          ],
+          "essential": false,
+          "cue": "short lab sessions only",
+          "category": "limitation"
+        }
+      ]
+    },
+    {
+      "slide": 7,
+      "title": "Takeaways",
+      "planned_seconds": 45,
+      "note": "Attention-aware documents are feasible with commodity webcams; next step is a field deployment.",
+      "key_points": [
+        {
+          "kp_id": "kp_gf_7a",
+          "text": "Attention-aware documents are feasible with commodity hardware today.",
+          "keywords": [
+            "feasible",
+            "attention-aware",
+            "commodity"
+          ],
+          "essential": true,
+          "cue": "feasible today",
+          "category": "core_claim"
+        },
+        {
+          "kp_id": "kp_gf_7b",
+          "text": "Next step: a field deployment.",
+          "keywords": [
+            "field deployment",
+            "in the wild"
+          ],
+          "essential": false,
+          "cue": "next: field deployment",
+          "category": "future_work"
+        }
+      ]
+    },
+    {
+      "slide": 8,
+      "title": "Q&A",
+      "planned_seconds": 60,
+      "is_qa": true,
+      "note": "Question and answer period.",
+      "key_points": []
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "gf_claim_01",
+      "doc_id": "doc_gf_paper",
+      "category": "core_claim",
+      "title": "Core claim",
+      "text": "Reading support that adapts to gaze improves comprehension of scientific papers without slowing readers down.",
+      "keywords": [
+        "adapts",
+        "gaze",
+        "comprehension",
+        "reading support"
+      ],
+      "cue": "gaze-adaptive support helps"
+    },
+    {
+      "chunk_id": "gf_bg_01",
+      "doc_id": "doc_gf_paper",
+      "category": "background",
+      "title": "Research background",
+      "text": "Researchers skim many papers and repeatedly re-read dense passages; reading tools remain static.",
+      "keywords": [
+        "skim",
+        "re-read",
+        "dense",
+        "static"
+      ],
+      "slide": 1,
+      "cue": "reading burden"
+    },
+    {
+      "chunk_id": "gf_method_01",
+      "doc_id": "doc_gf_paper",
+      "category": "method",
+      "title": "Gaze pipeline",
+      "text": "A commodity webcam estimates gaze; backward movements (regressions) over a term trigger help.",
+      "keywords": [
+        "webcam",
+        "gaze",
+        "regression",
+        "trigger"
+      ],
+      "slide": 3,
+      "cue": "webcam regressions trigger help"
+    },
+    {
+      "chunk_id": "gf_method_02",
+      "doc_id": "doc_gf_paper",
+      "category": "method",
+      "title": "Study baseline",
+      "text": "The comparison baseline is the identical PDF reader with adaptation turned off.",
+      "keywords": [
+        "baseline",
+        "comparison",
+        "adaptation",
+        "turned off"
+      ],
+      "slide": 4,
+      "cue": "baseline = no adaptation"
+    },
+    {
+      "chunk_id": "gf_result_01",
+      "doc_id": "doc_gf_paper",
+      "category": "result",
+      "title": "Main result",
+      "text": "Comprehension scores rose 18% relative to the baseline, with no increase in reading time.",
+      "keywords": [
+        "comprehension",
+        "18%",
+        "baseline",
+        "reading time"
+      ],
+      "slide": 5,
+      "cue": "+18% vs baseline"
+    },
+    {
+      "chunk_id": "gf_limit_01",
+      "doc_id": "doc_gf_paper",
+      "category": "limitation",
+      "title": "Limitations",
+      "text": "Tracking degrades in low light and the study covered only short lab sessions.",
+      "keywords": [
+        "low light",
+        "lab",
+        "short",
+        "degrades"
+      ],
+      "slide": 6,
+      "cue": "low light, lab only"
+    },
+    {
+      "chunk_id": "gf_related_01",
+      "doc_id": "doc_gf_paper",
+      "category": "related_work",
+      "title": "Related work",
+      "text": "Earlier gaze-responsive text prototypes needed dedicated eye trackers; inline definition tools need manual lookup.",
+      "keywords": [
+        "eye tracker",
+        "gaze-responsive",
+        "inline definition",
+        "manual"
+      ],
+      "slide": 2,
+      "cue": "prior work needed eye trackers"
+    },
+    {
+      "chunk_id": "gf_script_01",
+      "doc_id": "doc_gf_script",
+      "category": "script",
+      "title": "Script: transition to results",
+      "text": "Before results, remind the audience that every comparison is against the non-adaptive baseline.",
+      "keywords": [
+        "results",
+        "comparison",
+        "baseline",
+        "non-adaptive"
+      ],
+      "slide": 4,
+      "cue": "results are vs baseline"
+    }
+  ],
+  "qa": [
+    {
+      "chunk_id": "gf_qa_01",
+      "question": "How do you handle privacy with a webcam watching the reader?",
+      "answer": "All gaze processing runs locally and no video is stored.",
+      "topic": "webcam privacy",
+      "question_keywords": [
+        "privacy",
+        "webcam",
+        "watching",
+        "video"
+      ],
+      "answer_keywords": [
+        "locally",
+        "no video",
+        "not stored",
+        "privacy"
+      ],
+      "cue": "local only, no video stored"
+    },
+    {
+      "chunk_id": "gf_qa_02",
+      "question": "Why not use a dedicated eye tracker?",
+      "answer": "Webcams are already on every laptop, so the approach scales without extra cost.",
+      "topic": "eye tracker vs webcam",
+      "question_keywords": [
+        "eye tracker",
+        "dedicated"
+      ],
+      "answer_keywords": [
+        "every laptop",
+        "cost",
+        "scales"
+      ],
+      "cue": "webcams are everywhere"
+    },
+    {
+      "chunk_id": "gf_qa_03",
+      "question": "Does it help non-native readers?",
+      "answer": "The glossary pop-ups helped most on unfamiliar terms; a dedicated study with non-native readers is future work.",
+      "topic": "non-native readers",
+      "question_keywords": [
+        "non-native",
+        "language",
+        "second language"
+      ],
+      "answer_keywords": [
+        "glossary",
+        "unfamiliar terms",
+        "future work"
+      ],
+      "cue": "glossary helps; future study"
+    },
+    {
+      "chunk_id": "gf_qa_04",
+      "question": "How big was the effect compared to the baseline?",
+      "answer": "Comprehension improved by 18% over the non-adaptive baseline.",
+      "topic": "effect size",
+      "question_keywords": [
+        "how big",
+        "effect",
+        "compared"
+      ],
+      "answer_keywords": [
+        "18%",
+        "comprehension",
+        "baseline"
+      ],
+      "cue": "+18% comprehension"
+    }
+  ],
+  "glossary": [
+    {
+      "chunk_id": "gf_term_01",
+      "term": "regression",
+      "gloss": "a backward eye movement to re-read",
+      "keywords": [
+        "regression",
+        "regressions"
+      ]
+    },
+    {
+      "chunk_id": "gf_term_02",
+      "term": "NASA-TLX",
+      "gloss": "a standard workload questionnaire",
+      "keywords": [
+        "nasa-tlx",
+        "tlx"
+      ]
+    },
+    {
+      "chunk_id": "gf_term_03",
+      "term": "within-subjects",
+      "gloss": "every participant tried both conditions",
+      "keywords": [
+        "within-subjects",
+        "within subjects"
+      ]
+    }
+  ]
+}

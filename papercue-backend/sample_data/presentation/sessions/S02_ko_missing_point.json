@@ -1,0 +1,27 @@
+{
+  "session_id": "S02_ko_missing_point",
+  "title": "Forgot the baseline on the study-design slide",
+  "title_ko": "특정 슬라이드에서 설명을 잊은 발표",
+  "language": "ko",
+  "scenario_type": "missing_key_point",
+  "presenter_id": "presenter_ko_a",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-02T14:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 120,
+  "description": "실험 설계 슬라이드에서 기준선 설명을 빠뜨린 채 결과로 넘어간다. 슬라이드 전환 시점의 알림 후 발표자가 스스로 보충한다.",
+  "events": [
+    {"event_id": "S02_e01", "elapsed_time": 125, "current_slide": 3, "transcript_chunk": "이제 방법입니다. 스마트폰 기종마다 마이크 편차가 있어서 기종별 보정 모델을 학습했습니다.", "speech_rate": 335, "filler_count": 1, "presenter_state": {"arousal": 0.55}},
+    {"event_id": "S02_e02", "elapsed_time": 175, "current_slide": 3, "transcript_chunk": "위치는 250m 격자 단위로만 저장했고, 크라우드소싱으로 312명이 참여했습니다.", "speech_rate": 330, "filler_count": 1, "presenter_state": {"arousal": 0.55}},
+    {"event_id": "S02_e03", "elapsed_time": 212, "current_slide": 4, "transcript_chunk": "실험 설계입니다. 공인 측정소 18곳의 값과 비교했습니다.", "speech_rate": 338, "filler_count": 1, "presenter_state": {"arousal": 0.58}},
+    {"event_id": "S02_e04", "elapsed_time": 240, "current_slide": 4, "transcript_chunk": "측정은 3주 동안 진행했고, 어… 참여자들은 평소처럼 휴대폰을 사용했습니다.", "speech_rate": 332, "filler_count": 2, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "target": "kp_sm_4a", "note": "아직 같은 슬라이드에 있으므로 스스로 기준선을 말할 가능성이 있다."}},
+    {"event_id": "S02_e05", "elapsed_time": 262, "current_slide": 5, "transcript_chunk": "결과를 보겠습니다. 보정 후 평균 오차가 크게 줄었습니다.", "speech_rate": 340, "filler_count": 1, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": true, "expected_prompt_type": "content_reminder", "severity": "high", "target": "kp_sm_4a", "note": "기준선 설명 없이 결과로 넘어갔다. 결과 해석에 필수."}},
+    {"event_id": "S02_e06", "elapsed_time": 285, "current_slide": 5, "transcript_chunk": "아, 여기서 비교한 기준선은 보정하지 않은 원시 측정값입니다. 원시값 대비 평균 오차가 7.9dB에서 2.1dB로 줄었습니다.", "speech_rate": 330, "filler_count": 1, "presenter_state": {"arousal": 0.52},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered", "note": "알림 후 기준선을 보충했다."}},
+    {"event_id": "S02_e07", "elapsed_time": 330, "current_slide": 5, "transcript_chunk": "야간에는 오차가 더 컸습니다.", "speech_rate": 328, "presenter_state": {"arousal": 0.48}},
+    {"event_id": "S02_e08", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "한계로는 주머니 속 측정의 신뢰도가 낮다는 점이 있습니다.", "speech_rate": 332, "presenter_state": {"arousal": 0.46}},
+    {"event_id": "S02_e09", "elapsed_time": 440, "current_slide": 7, "transcript_chunk": "정리하면, 보정만으로 저비용 소음 지도가 가능합니다. 다음에는 지자체와 연계하려 합니다.", "speech_rate": 334, "presenter_state": {"arousal": 0.45}}
+  ]
+}

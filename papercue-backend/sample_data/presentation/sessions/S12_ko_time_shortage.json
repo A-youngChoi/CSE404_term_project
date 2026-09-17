@@ -1,0 +1,27 @@
+{
+  "session_id": "S12_ko_time_shortage",
+  "title": "Running out of time late in the talk",
+  "title_ko": "발표 후반부에 시간이 부족해진 경우",
+  "language": "ko",
+  "scenario_type": "time_pressure",
+  "presenter_id": "presenter_ko_b",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-12T11:00:00+09:00",
+  "planned_duration_s": 480,
+  "excerpt_start_elapsed": 250,
+  "description": "실험 설계와 결과에서 곁가지 이야기로 시간이 부족해진다. 시간 조절 알림, 진행 중 억제, 마무리 유도 순서로 개입한다.",
+  "events": [
+    {"event_id": "S12_e01", "elapsed_time": 250, "current_slide": 4, "transcript_chunk": "실험 설계입니다. 기준선은 보정하지 않은 원시 측정값입니다.", "speech_rate": 340, "presenter_state": {"arousal": 0.5}},
+    {"event_id": "S12_e02", "elapsed_time": 330, "current_slide": 4, "transcript_chunk": "공인 측정소 18곳과 비교했고, 측정 기간은 3주였는데요, 날씨가 궂은 날도 있어서 참여자분들이 고생을 많이 하셨습니다.", "speech_rate": 335, "presenter_state": {"arousal": 0.52},
+     "ground_truth": {"issue": "time_pressure", "expected_intervention": true, "expected_prompt_type": "time_management", "severity": "medium", "note": "남은 150초에 필요한 내용은 약 195초. 곁가지 이야기 중."}},
+    {"event_id": "S12_e03", "elapsed_time": 345, "current_slide": 5, "transcript_chunk": "결과만 빠르게 말씀드리면, 평균 오차가 7.9에서 2.1dB로 줄었습니다.", "speech_rate": 380, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "time_pressure", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "medium", "note": "알림에 반응해 결과로 넘어갔다. 15초 전에 알림을 보냈다."}},
+    {"event_id": "S12_e04", "elapsed_time": 375, "current_slide": 5, "transcript_chunk": "야간에는 오차가 좀 더 컸는데, 그 이유는 마이크 자체 잡음 때문이고, 이 부분은 부록에 자세히 있습니다.", "speech_rate": 360, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "time_pressure", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "medium", "note": "같은 문제로 45초 전에 알렸고 발표자가 속도를 올리는 중이다."}},
+    {"event_id": "S12_e05", "elapsed_time": 420, "current_slide": 5, "transcript_chunk": "그리고 지역별로 보면 강남과 신촌의 차이가 꽤 흥미로운데요, 이건 제가 직접 측정해 보기도 했습니다.", "speech_rate": 350, "presenter_state": {"arousal": 0.66},
+     "ground_truth": {"issue": "time_pressure", "expected_intervention": true, "expected_prompt_type": "wrap_up", "severity": "critical", "target": "kp_sm_7a", "note": "남은 60초. 결론을 말하지 못할 위험."}},
+    {"event_id": "S12_e06", "elapsed_time": 435, "current_slide": 7, "transcript_chunk": "시간 관계상 한계는 넘어가고 결론만 말씀드리면, 보정만으로 저비용 소음 지도가 가능합니다.", "speech_rate": 345, "presenter_state": {"arousal": 0.62},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "medium", "target": "kp_sm_6a", "expected_outcome": "recovered", "note": "시간 때문에 한계 슬라이드를 의도적으로 건너뛰었다. 지금 되돌리면 마무리를 방해한다."}},
+    {"event_id": "S12_e07", "elapsed_time": 470, "current_slide": 7, "transcript_chunk": "다음 단계로는 지자체와 연계할 계획입니다. 감사합니다.", "speech_rate": 340, "presenter_state": {"arousal": 0.5}}
+  ]
+}

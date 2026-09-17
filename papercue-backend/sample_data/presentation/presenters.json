@@ -1,0 +1,93 @@
+{
+  "synthetic": true,
+  "note": "Fictional presenters. Priors are uncertain starting hypotheses that the dynamic user model revises during a session.",
+  "presenters": [
+    {
+      "presenter_id": "presenter_ko_a",
+      "display_name": "가상 발표자 A",
+      "preferred_language": "ko",
+      "expertise_level": "novice",
+      "baseline_speech_rate": 330,
+      "speech_rate_unit": "spm",
+      "preferred_prompt_length": "short",
+      "baseline_filler_per_event": 1.0,
+      "prior_episodes": [
+        {"summary": "In the previous rehearsal the presenter skipped the baseline comparison on the study-design slide twice.", "issue": "missing_key_point", "category": "baseline_comparison", "importance": 0.7},
+        {"summary": "In the previous rehearsal fillers rose when the presenter was nervous.", "issue": "filler_repetition", "category": null, "importance": 0.5}
+      ],
+      "prior_traits": [
+        {"summary": "Tends to skip the baseline comparison.", "attribute": "often_missed_content", "value": "baseline_comparison", "confidence": 0.45}
+      ]
+    },
+    {
+      "presenter_id": "presenter_ko_b",
+      "display_name": "가상 발표자 B",
+      "preferred_language": "ko",
+      "expertise_level": "intermediate",
+      "baseline_speech_rate": 340,
+      "speech_rate_unit": "spm",
+      "preferred_prompt_length": "short",
+      "baseline_filler_per_event": 0.8,
+      "prior_episodes": [
+        {"summary": "In the previous talk the presenter ran out of time before the conclusion.", "issue": "time_pressure", "category": null, "importance": 0.6}
+      ],
+      "prior_traits": []
+    },
+    {
+      "presenter_id": "presenter_ko_c",
+      "display_name": "가상 발표자 C",
+      "preferred_language": "ko",
+      "expertise_level": "expert",
+      "baseline_speech_rate": 320,
+      "speech_rate_unit": "spm",
+      "preferred_prompt_length": "short",
+      "baseline_filler_per_event": 0.5,
+      "prior_episodes": [
+        {"summary": "The presenter often uses deliberate pauses for emphasis and recovers without help.", "issue": "long_silence", "category": null, "importance": 0.5}
+      ],
+      "prior_traits": [
+        {"summary": "Uses deliberate rhetorical pauses.", "attribute": "tension_pattern", "value": "deliberate_pauses", "confidence": 0.4}
+      ]
+    },
+    {
+      "presenter_id": "presenter_en_a",
+      "display_name": "Synthetic presenter D",
+      "preferred_language": "en",
+      "expertise_level": "novice",
+      "baseline_speech_rate": 135,
+      "speech_rate_unit": "wpm",
+      "preferred_prompt_length": "short",
+      "baseline_filler_per_event": 1.2,
+      "prior_episodes": [
+        {"summary": "In a lab meeting the presenter repeated 'basically' many times under pressure.", "issue": "filler_repetition", "category": null, "importance": 0.6}
+      ],
+      "prior_traits": []
+    },
+    {
+      "presenter_id": "presenter_en_b",
+      "display_name": "Synthetic presenter E",
+      "preferred_language": "en",
+      "expertise_level": "intermediate",
+      "baseline_speech_rate": 140,
+      "speech_rate_unit": "wpm",
+      "preferred_prompt_length": "medium",
+      "baseline_filler_per_event": 0.8,
+      "prior_episodes": [],
+      "prior_traits": []
+    },
+    {
+      "presenter_id": "presenter_en_c",
+      "display_name": "Synthetic presenter F",
+      "preferred_language": "en",
+      "expertise_level": "expert",
+      "baseline_speech_rate": 150,
+      "speech_rate_unit": "wpm",
+      "preferred_prompt_length": "short",
+      "baseline_filler_per_event": 0.4,
+      "prior_episodes": [
+        {"summary": "Prompts during Q&A were reported as distracting in an earlier pilot.", "issue": "qa_misunderstanding", "category": null, "importance": 0.5}
+      ],
+      "prior_traits": []
+    }
+  ]
+}

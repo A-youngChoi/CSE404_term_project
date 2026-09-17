@@ -1,0 +1,29 @@
+{
+  "session_id": "S09_en_prompt_helped",
+  "title": "Prompts that clearly helped",
+  "title_ko": "시스템 프롬프트가 도움이 된 경우",
+  "language": "en",
+  "scenario_type": "prompt_helped",
+  "presenter_id": "presenter_en_a",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-09T10:30:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 210,
+  "description": "A novice blanks before explaining the baseline and later skips the key result number. Both prompts are followed by an immediate recovery.",
+  "events": [
+    {"event_id": "S09_e01", "elapsed_time": 212, "current_slide": 4, "transcript_chunk": "For the study, we had 24 participants in a within-subjects design.", "speech_rate": 130, "filler_count": 1, "presenter_state": {"arousal": 0.6}},
+    {"event_id": "S09_e02", "elapsed_time": 250, "current_slide": 4, "transcript_chunk": "Each, uh, each person read two papers.", "speech_rate": 128, "filler_count": 2, "silence_duration": 2.5, "presenter_state": {"arousal": 0.68},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "target": "kp_gf_4b", "note": "Baseline not yet mentioned, but there is still time on this slide."}},
+    {"event_id": "S09_e03", "elapsed_time": 276, "event_type": "silence", "current_slide": 4, "transcript_chunk": "", "speech_rate": 0, "silence_duration": 6.8, "filler_count": 1, "presenter_state": {"arousal": 0.8}, "audience_signal": {"attention": 0.62, "confusion": 0.2, "reaction": "waiting"},
+     "ground_truth": {"issue": "long_silence", "expected_intervention": true, "expected_prompt_type": "silence_recovery", "severity": "high", "target": "kp_gf_4b", "note": "Blanked right before the baseline explanation."}},
+    {"event_id": "S09_e04", "elapsed_time": 288, "current_slide": 4, "transcript_chunk": "Right, the baseline was the same reader without adaptation.", "speech_rate": 132, "presenter_state": {"arousal": 0.66},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S09_e05", "elapsed_time": 300, "current_slide": 5, "transcript_chunk": "In the results, comprehension went up.", "speech_rate": 134, "presenter_state": {"arousal": 0.6}},
+    {"event_id": "S09_e06", "elapsed_time": 335, "current_slide": 5, "transcript_chunk": "Participants liked the pop-ups, and reading time was unchanged.", "speech_rate": 130, "filler_count": 1, "presenter_state": {"arousal": 0.58}},
+    {"event_id": "S09_e07", "elapsed_time": 362, "current_slide": 6, "transcript_chunk": "The main limitation is low light.", "speech_rate": 131, "presenter_state": {"arousal": 0.58},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": true, "expected_prompt_type": "content_reminder", "severity": "high", "target": "kp_gf_5a", "note": "Moved on without the key result (+18%)."}},
+    {"event_id": "S09_e08", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "Oh, and I skipped the key number: comprehension improved by 18% over the baseline.", "speech_rate": 133, "presenter_state": {"arousal": 0.55},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S09_e09", "elapsed_time": 420, "current_slide": 6, "transcript_chunk": "We also only ran short lab sessions.", "speech_rate": 134, "presenter_state": {"arousal": 0.5}}
+  ]
+}

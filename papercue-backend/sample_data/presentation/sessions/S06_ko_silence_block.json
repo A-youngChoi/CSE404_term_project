@@ -1,0 +1,26 @@
+{
+  "session_id": "S06_ko_silence_block",
+  "title": "Blank on the results slide",
+  "title_ko": "발표자가 잠시 침묵하거나 말이 막힌 발표",
+  "language": "ko",
+  "scenario_type": "long_silence",
+  "presenter_id": "presenter_ko_a",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-06T13:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 210,
+  "description": "짧은 침묵은 기다리고, 결과 슬라이드에서 8.5초 동안 말이 막히자 다음 내용을 회복 단서로 제시한다.",
+  "events": [
+    {"event_id": "S06_e01", "elapsed_time": 212, "current_slide": 4, "transcript_chunk": "실험 설계입니다. 기준선은 보정하지 않은 원시 측정값이고, 공인 측정소 18곳과 비교했습니다.", "speech_rate": 320, "presenter_state": {"arousal": 0.6}},
+    {"event_id": "S06_e02", "elapsed_time": 250, "current_slide": 4, "transcript_chunk": "측정은 3주 동안 이루어졌습니다.", "speech_rate": 310, "silence_duration": 3.5, "presenter_state": {"arousal": 0.64},
+     "ground_truth": {"issue": "long_silence", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "note": "3.5초 침묵 뒤 스스로 이어갔다."}},
+    {"event_id": "S06_e03", "elapsed_time": 288, "current_slide": 5, "transcript_chunk": "다음은 결과입니다. 결과는…", "speech_rate": 300, "silence_duration": 1.0, "presenter_state": {"arousal": 0.7}},
+    {"event_id": "S06_e04", "elapsed_time": 300, "event_type": "silence", "current_slide": 5, "transcript_chunk": "", "speech_rate": 0, "silence_duration": 8.5, "filler_count": 1, "presenter_state": {"arousal": 0.82}, "audience_signal": {"attention": 0.6, "confusion": 0.2, "reaction": "waiting"},
+     "ground_truth": {"issue": "long_silence", "expected_intervention": true, "expected_prompt_type": "silence_recovery", "severity": "high", "target": "kp_sm_5a", "note": "결과 수치를 떠올리지 못하고 8.5초 동안 멈췄다."}},
+    {"event_id": "S06_e05", "elapsed_time": 312, "current_slide": 5, "transcript_chunk": "네, 평균 오차가 7.9dB에서 2.1dB로 줄었습니다.", "speech_rate": 315, "silence_duration": 0.8, "presenter_state": {"arousal": 0.68},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S06_e06", "elapsed_time": 345, "current_slide": 5, "transcript_chunk": "야간에는 오차가 조금 더 컸습니다.", "speech_rate": 325, "presenter_state": {"arousal": 0.6}},
+    {"event_id": "S06_e07", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "한계는 주머니 속 측정의 신뢰도입니다.", "speech_rate": 330, "silence_duration": 2.0, "presenter_state": {"arousal": 0.56}},
+    {"event_id": "S06_e08", "elapsed_time": 440, "current_slide": 7, "transcript_chunk": "결론적으로 저비용 소음 지도가 가능합니다.", "speech_rate": 330, "presenter_state": {"arousal": 0.5}}
+  ]
+}

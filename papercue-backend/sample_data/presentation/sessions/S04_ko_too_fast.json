@@ -1,0 +1,27 @@
+{
+  "session_id": "S04_ko_too_fast",
+  "title": "Rushing and skipping the method",
+  "title_ko": "너무 빠르게 진행되어 핵심 내용을 생략한 발표",
+  "language": "ko",
+  "scenario_type": "pace_too_fast",
+  "presenter_id": "presenter_ko_b",
+  "kb_id": "kb_soundmap",
+  "start_time": "2026-09-04T16:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 60,
+  "description": "빠른 속도로 슬라이드를 넘기며 방법 슬라이드의 핵심(기종별 편차 보정)을 생략한다. 속도 알림 직후의 추가 알림은 억제하고, 쿨다운 이후 누락 내용을 알린다.",
+  "events": [
+    {"event_id": "S04_e01", "elapsed_time": 62, "current_slide": 2, "transcript_chunk": "연구 질문은 저가 스마트폰만으로 측정소 수준 지도를 만들 수 있냐는 겁니다.", "speech_rate": 440, "presenter_state": {"arousal": 0.7},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "note": "빠르지만 첫 관찰이다."}},
+    {"event_id": "S04_e02", "elapsed_time": 78, "current_slide": 3, "transcript_chunk": "방법은 한마디로 보정입니다. 위치는 격자로 저장하고요.", "speech_rate": 455, "presenter_state": {"arousal": 0.72}, "audience_signal": {"attention": 0.6, "confusion": 0.3, "reaction": "neutral"},
+     "ground_truth": {"issue": "pace_too_fast", "expected_intervention": true, "expected_prompt_type": "pace_adjustment", "severity": "medium", "note": "빠른 속도가 지속되고 슬라이드 2를 16초 만에 넘겼다."}},
+    {"event_id": "S04_e03", "elapsed_time": 96, "current_slide": 4, "transcript_chunk": "실험은 원시 측정값을 기준선으로 두고 18곳 측정소와 비교했습니다.", "speech_rate": 460, "presenter_state": {"arousal": 0.74}, "audience_signal": {"attention": 0.55, "confusion": 0.4, "reaction": "puzzled"},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": false, "expected_decision": "SUPPRESS_DUE_TO_RECENT_INTERVENTION", "severity": "high", "target": "kp_sm_3a", "note": "방법 핵심이 빠졌지만 18초 전에 알림을 보냈으므로 연속 알림은 방해가 된다."}},
+    {"event_id": "S04_e04", "elapsed_time": 130, "current_slide": 5, "transcript_chunk": "결과적으로 오차가 7.9에서 2.1로 줄었습니다. 야간은 좀 더 크고요.", "speech_rate": 430, "presenter_state": {"arousal": 0.7}, "audience_signal": {"attention": 0.55, "confusion": 0.45, "reaction": "puzzled"},
+     "ground_truth": {"issue": "missing_key_point", "expected_intervention": true, "expected_prompt_type": "content_reminder", "severity": "high", "target": "kp_sm_3a", "note": "결과의 전제인 기종별 편차 보정 설명이 여전히 빠져 있고, 쿨다운이 지났다."}},
+    {"event_id": "S04_e05", "elapsed_time": 150, "current_slide": 5, "transcript_chunk": "아, 앞에서 빠뜨렸는데 기종별로 마이크 편차가 달라서 보정 모델이 필요합니다.", "speech_rate": 380, "presenter_state": {"arousal": 0.62}, "audience_signal": {"attention": 0.65, "confusion": 0.25, "reaction": "nodding"},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S04_e06", "elapsed_time": 185, "current_slide": 6, "transcript_chunk": "한계는 주머니 속 측정입니다. 참여자도 도심에 편중됐고요.", "speech_rate": 360, "presenter_state": {"arousal": 0.58}},
+    {"event_id": "S04_e07", "elapsed_time": 215, "current_slide": 7, "transcript_chunk": "결론적으로 저비용 소음 지도가 가능합니다.", "speech_rate": 350, "presenter_state": {"arousal": 0.55}}
+  ]
+}

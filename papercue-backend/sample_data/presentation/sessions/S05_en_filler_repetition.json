@@ -1,0 +1,27 @@
+{
+  "session_id": "S05_en_filler_repetition",
+  "title": "Repeating 'basically' and fillers",
+  "title_ko": "같은 표현이나 filler word를 반복하는 발표",
+  "language": "en",
+  "scenario_type": "filler_repetition",
+  "presenter_id": "presenter_en_a",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-05T11:00:00+09:00",
+  "planned_duration_s": 540,
+  "excerpt_start_elapsed": 120,
+  "description": "Fillers and the phrase 'basically' pile up on the method slide. A single repetition prompt helps; a later small relapse is ignored.",
+  "events": [
+    {"event_id": "S05_e01", "elapsed_time": 125, "current_slide": 3, "transcript_chunk": "Um, so basically GazeFlow uses a webcam to, um, find regressions.", "speech_rate": 132, "filler_count": 2, "repeated_phrase": {"text": "basically", "count": 1}, "presenter_state": {"arousal": 0.6}},
+    {"event_id": "S05_e02", "elapsed_time": 150, "current_slide": 3, "transcript_chunk": "Basically, uh, when you, um, look back at a word, basically a glossary pop-up shows up.", "speech_rate": 130, "filler_count": 4, "repeated_phrase": {"text": "basically", "count": 2}, "presenter_state": {"arousal": 0.66},
+     "ground_truth": {"issue": "filler_repetition", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "note": "Rising, but could settle on its own."}},
+    {"event_id": "S05_e03", "elapsed_time": 178, "current_slide": 3, "transcript_chunk": "And, um, basically, it's, uh, basically all local, basically no video is stored.", "speech_rate": 128, "filler_count": 5, "repeated_phrase": {"text": "basically", "count": 3}, "presenter_state": {"arousal": 0.72}, "audience_signal": {"attention": 0.55, "confusion": 0.2, "reaction": "distracted"},
+     "ground_truth": {"issue": "filler_repetition", "expected_intervention": true, "expected_prompt_type": "repetition_alert", "severity": "medium", "target": "basically", "note": "Six uses of 'basically' within a minute; audience attention is dropping."}},
+    {"event_id": "S05_e04", "elapsed_time": 215, "current_slide": 4, "transcript_chunk": "We ran a within-subjects study with 24 participants.", "speech_rate": 134, "filler_count": 1, "presenter_state": {"arousal": 0.62},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S05_e05", "elapsed_time": 245, "current_slide": 4, "transcript_chunk": "The baseline was the same reader without adaptation.", "speech_rate": 135, "filler_count": 1, "presenter_state": {"arousal": 0.58}},
+    {"event_id": "S05_e06", "elapsed_time": 290, "current_slide": 5, "transcript_chunk": "So, um, basically comprehension went up 18%.", "speech_rate": 133, "filler_count": 3, "repeated_phrase": {"text": "basically", "count": 1}, "presenter_state": {"arousal": 0.6},
+     "ground_truth": {"issue": "filler_repetition", "expected_intervention": false, "expected_decision": "DO_NOT_INTERVENE", "severity": "low", "note": "A small relapse after a helpful prompt; another prompt would add pressure."}},
+    {"event_id": "S05_e07", "elapsed_time": 330, "current_slide": 5, "transcript_chunk": "Reading time stayed the same, and NASA-TLX workload was lower.", "speech_rate": 134, "filler_count": 1, "presenter_state": {"arousal": 0.55}},
+    {"event_id": "S05_e08", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "One limitation is low light, where webcam accuracy drops.", "speech_rate": 136, "filler_count": 1, "presenter_state": {"arousal": 0.52}}
+  ]
+}

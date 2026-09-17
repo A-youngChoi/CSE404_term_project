@@ -1,0 +1,25 @@
+{
+  "session_id": "S01_en_stable",
+  "title": "Stable talk (expert)",
+  "title_ko": "전반적으로 안정적인 발표",
+  "language": "en",
+  "scenario_type": "stable",
+  "presenter_id": "presenter_en_c",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-01T10:00:00+09:00",
+  "planned_duration_s": 540,
+  "description": "An experienced presenter covers every essential point at a steady pace. The system should stay quiet.",
+  "events": [
+    {"event_id": "S01_e01", "elapsed_time": 5, "current_slide": 1, "transcript_chunk": "Every week researchers skim dozens of papers, and dense passages pull us into re-reading loops.", "speech_rate": 148, "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.35}},
+    {"event_id": "S01_e02", "elapsed_time": 62, "current_slide": 2, "transcript_chunk": "A static PDF cannot react when a reader struggles, and today's highlighting tools are manual.", "speech_rate": 150, "audience_signal": {"attention": 0.8, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.33}},
+    {"event_id": "S01_e03", "elapsed_time": 125, "current_slide": 3, "transcript_chunk": "GazeFlow uses an ordinary webcam to track gaze and detect regressions, the moments you jump back to re-read.", "speech_rate": 149, "audience_signal": {"attention": 0.78, "confusion": 0.15, "reaction": "neutral"}, "presenter_state": {"arousal": 0.35}},
+    {"event_id": "S01_e04", "elapsed_time": 170, "current_slide": 3, "transcript_chunk": "When a regression lands on a dense term, a glossary pop-up appears. It all runs locally, and no video is stored.", "speech_rate": 146, "silence_duration": 2.2, "audience_signal": {"attention": 0.8, "confusion": 0.12, "reaction": "nodding"}, "presenter_state": {"arousal": 0.32},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "note": "A 2.2 s pause for emphasis is natural."}},
+    {"event_id": "S01_e05", "elapsed_time": 215, "current_slide": 4, "transcript_chunk": "We ran a within-subjects study with 24 participants. The baseline was the same reader without adaptation.", "speech_rate": 151, "audience_signal": {"attention": 0.76, "confusion": 0.1, "reaction": "neutral"}, "presenter_state": {"arousal": 0.34}},
+    {"event_id": "S01_e06", "elapsed_time": 290, "current_slide": 5, "transcript_chunk": "Comprehension went up 18% over the baseline, reading time was unchanged, and NASA-TLX workload dropped.", "speech_rate": 150, "audience_signal": {"attention": 0.75, "confusion": 0.25, "reaction": "neutral"}, "presenter_state": {"arousal": 0.36}},
+    {"event_id": "S01_e07", "elapsed_time": 345, "current_slide": 5, "transcript_chunk": "So the adaptation helps without slowing anyone down.", "speech_rate": 150, "audience_signal": {"attention": 0.78, "confusion": 0.1, "reaction": "nodding"}, "presenter_state": {"arousal": 0.33}},
+    {"event_id": "S01_e08", "elapsed_time": 380, "current_slide": 6, "transcript_chunk": "The main limitation: in low light, webcam accuracy drops, and we only tested short lab sessions.", "speech_rate": 147, "audience_signal": {"attention": 0.74, "confusion": 0.1, "reaction": "neutral"}, "presenter_state": {"arousal": 0.33}},
+    {"event_id": "S01_e09", "elapsed_time": 438, "current_slide": 7, "transcript_chunk": "The takeaway: attention-aware documents are feasible today with commodity webcams. Next, a field deployment.", "speech_rate": 148, "audience_signal": {"attention": 0.8, "confusion": 0.08, "reaction": "nodding"}, "presenter_state": {"arousal": 0.32}},
+    {"event_id": "S01_e10", "elapsed_time": 470, "current_slide": 7, "transcript_chunk": "Thank you, I'm happy to take questions.", "speech_rate": 145, "audience_signal": {"attention": 0.82, "confusion": 0.05, "reaction": "applause"}, "presenter_state": {"arousal": 0.3}}
+  ]
+}

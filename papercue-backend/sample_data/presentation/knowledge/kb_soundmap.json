@@ -1,0 +1,473 @@
+{
+  "kb_id": "kb_soundmap",
+  "language": "ko",
+  "synthetic": true,
+  "paper_title": "소리지도: 스마트폰 센서 기반 도시 소음 지도 작성 (합성 예시)",
+  "documents": [
+    {
+      "doc_id": "doc_sm_paper",
+      "title": "소리지도 논문(합성)",
+      "doc_type": "paper"
+    },
+    {
+      "doc_id": "doc_sm_script",
+      "title": "발표 원고(합성)",
+      "doc_type": "script"
+    },
+    {
+      "doc_id": "doc_sm_slides",
+      "title": "슬라이드 설명(합성)",
+      "doc_type": "slide_notes"
+    },
+    {
+      "doc_id": "doc_sm_qa",
+      "title": "예상 질문(합성)",
+      "doc_type": "expected_qa"
+    },
+    {
+      "doc_id": "doc_sm_glossary",
+      "title": "용어집(합성)",
+      "doc_type": "glossary"
+    }
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "title": "도시 소음 문제",
+      "planned_seconds": 60,
+      "note": "도시 소음이 수면과 건강에 주는 영향, 그리고 공인 측정소가 적다는 점으로 시작한다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_1a",
+          "text": "도시 소음은 수면과 건강에 영향을 준다.",
+          "keywords": [
+            "수면",
+            "건강"
+          ],
+          "essential": true,
+          "cue": "수면·건강 영향",
+          "category": "motivation"
+        },
+        {
+          "kp_id": "kp_sm_1b",
+          "text": "공인 측정소는 도시마다 수십 곳뿐이다.",
+          "keywords": [
+            "수십 곳",
+            "측정소가 부족",
+            "측정소는"
+          ],
+          "essential": false,
+          "cue": "측정소 수십 곳뿐",
+          "category": "background"
+        }
+      ]
+    },
+    {
+      "slide": 2,
+      "title": "연구 질문",
+      "planned_seconds": 60,
+      "note": "저가 스마트폰만으로 측정소 수준의 소음 지도를 만들 수 있는지 묻는다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_2a",
+          "text": "저가 스마트폰으로 측정소 수준의 소음 지도를 만들 수 있는가?",
+          "keywords": [
+            "측정소 수준",
+            "스마트폰만으로",
+            "저가 스마트폰"
+          ],
+          "essential": true,
+          "cue": "스마트폰으로 측정소 수준?",
+          "category": "problem"
+        }
+      ]
+    },
+    {
+      "slide": 3,
+      "title": "방법: 기종별 보정",
+      "planned_seconds": 90,
+      "note": "기종마다 다른 마이크 편차를 보정 모델로 줄이고, 위치는 격자 단위로 저장한다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_3a",
+          "text": "기종별 마이크 편차를 보정 모델로 줄인다.",
+          "keywords": [
+            "편차",
+            "보정 모델",
+            "기종별"
+          ],
+          "essential": true,
+          "cue": "기종별 마이크 편차 보정",
+          "category": "method"
+        },
+        {
+          "kp_id": "kp_sm_3b",
+          "text": "위치 정보는 250m 격자 단위로 뭉개서 저장한다.",
+          "keywords": [
+            "격자",
+            "250m"
+          ],
+          "essential": false,
+          "cue": "위치는 250m 격자",
+          "category": "method"
+        },
+        {
+          "kp_id": "kp_sm_3c",
+          "text": "크라우드소싱 참여자 312명이 측정에 참여했다.",
+          "keywords": [
+            "312명",
+            "크라우드소싱"
+          ],
+          "essential": false,
+          "cue": "참여자 312명",
+          "category": "method"
+        }
+      ]
+    },
+    {
+      "slide": 4,
+      "title": "실험 설계",
+      "planned_seconds": 75,
+      "note": "기준선은 보정하지 않은 원시 측정값이며, 공인 측정소 18곳의 값과 비교한다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_4a",
+          "text": "기준선은 보정하지 않은 원시 측정값이다.",
+          "keywords": [
+            "기준선",
+            "원시 측정값",
+            "보정하지 않은"
+          ],
+          "essential": true,
+          "cue": "기준선 = 보정 없는 원시값",
+          "category": "baseline_comparison"
+        },
+        {
+          "kp_id": "kp_sm_4b",
+          "text": "공인 측정소 18곳의 값과 비교한다.",
+          "keywords": [
+            "18곳",
+            "열여덟"
+          ],
+          "essential": true,
+          "cue": "공인 측정소 18곳과 비교",
+          "category": "method"
+        }
+      ]
+    },
+    {
+      "slide": 5,
+      "title": "결과",
+      "planned_seconds": 90,
+      "note": "평균 오차가 7.9dB에서 2.1dB로 줄었고, 야간 시간대 오차는 상대적으로 크다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_5a",
+          "text": "평균 오차가 7.9dB에서 2.1dB로 감소했다.",
+          "keywords": [
+            "2.1"
+          ],
+          "essential": true,
+          "cue": "오차 7.9→2.1dB",
+          "category": "result"
+        },
+        {
+          "kp_id": "kp_sm_5b",
+          "text": "야간 시간대에는 오차가 더 크다.",
+          "keywords": [
+            "야간",
+            "밤 시간"
+          ],
+          "essential": false,
+          "cue": "야간 오차 큼",
+          "category": "result"
+        }
+      ]
+    },
+    {
+      "slide": 6,
+      "title": "한계",
+      "planned_seconds": 60,
+      "note": "주머니 속 측정은 신뢰도가 낮고, 참여자가 도심에 편중되어 있다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_6a",
+          "text": "주머니 속에서 측정한 값은 신뢰도가 낮다.",
+          "keywords": [
+            "주머니"
+          ],
+          "essential": true,
+          "cue": "주머니 속 측정 한계",
+          "category": "limitation"
+        },
+        {
+          "kp_id": "kp_sm_6b",
+          "text": "참여자가 도심 지역에 편중되어 있다.",
+          "keywords": [
+            "편중",
+            "도심"
+          ],
+          "essential": false,
+          "cue": "도심 편중",
+          "category": "limitation"
+        }
+      ]
+    },
+    {
+      "slide": 7,
+      "title": "결론",
+      "planned_seconds": 45,
+      "note": "기기별 보정만으로 저비용 소음 지도가 가능하며, 다음 단계는 지자체와의 연계다.",
+      "key_points": [
+        {
+          "kp_id": "kp_sm_7a",
+          "text": "기기별 보정만으로 저비용 소음 지도를 만들 수 있다.",
+          "keywords": [
+            "저비용"
+          ],
+          "essential": true,
+          "cue": "보정만으로 저비용 지도",
+          "category": "core_claim"
+        },
+        {
+          "kp_id": "kp_sm_7b",
+          "text": "다음 단계는 지자체와의 연계다.",
+          "keywords": [
+            "지자체"
+          ],
+          "essential": false,
+          "cue": "다음: 지자체 연계",
+          "category": "future_work"
+        }
+      ]
+    },
+    {
+      "slide": 8,
+      "title": "질의응답",
+      "planned_seconds": 60,
+      "is_qa": true,
+      "note": "질의응답 시간.",
+      "key_points": []
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "sm_claim_01",
+      "doc_id": "doc_sm_paper",
+      "category": "core_claim",
+      "title": "핵심 주장",
+      "text": "기종별 보정을 거친 스마트폰 측정만으로 공인 측정소에 가까운 소음 지도를 만들 수 있다.",
+      "keywords": [
+        "보정",
+        "스마트폰",
+        "측정소",
+        "소음 지도"
+      ],
+      "cue": "보정하면 측정소 수준"
+    },
+    {
+      "chunk_id": "sm_bg_01",
+      "doc_id": "doc_sm_paper",
+      "category": "background",
+      "title": "연구 배경",
+      "text": "도시 소음은 수면과 건강에 영향을 주지만 공인 측정소는 수십 곳뿐이라 지역별 차이를 보기 어렵다.",
+      "keywords": [
+        "소음",
+        "수면",
+        "건강",
+        "측정소"
+      ],
+      "slide": 1,
+      "cue": "측정소가 부족"
+    },
+    {
+      "chunk_id": "sm_method_01",
+      "doc_id": "doc_sm_paper",
+      "category": "method",
+      "title": "보정 모델",
+      "text": "스마트폰 기종마다 마이크 감도 편차가 있어, 기종별 보정 모델로 측정값을 맞춘다.",
+      "keywords": [
+        "기종",
+        "마이크",
+        "편차",
+        "보정 모델"
+      ],
+      "slide": 3,
+      "cue": "기종별 편차 보정"
+    },
+    {
+      "chunk_id": "sm_method_02",
+      "doc_id": "doc_sm_paper",
+      "category": "method",
+      "title": "비교 기준선",
+      "text": "비교 기준선은 보정하지 않은 원시 측정값이며, 공인 측정소 18곳을 정답으로 사용한다.",
+      "keywords": [
+        "기준선",
+        "원시",
+        "비교",
+        "측정소",
+        "18곳"
+      ],
+      "slide": 4,
+      "cue": "기준선 = 원시값"
+    },
+    {
+      "chunk_id": "sm_result_01",
+      "doc_id": "doc_sm_paper",
+      "category": "result",
+      "title": "주요 결과",
+      "text": "보정 후 평균 오차가 7.9dB에서 2.1dB로 줄었다. 야간에는 오차가 더 컸다.",
+      "keywords": [
+        "오차",
+        "7.9",
+        "2.1",
+        "야간",
+        "결과"
+      ],
+      "slide": 5,
+      "cue": "오차 7.9→2.1dB"
+    },
+    {
+      "chunk_id": "sm_limit_01",
+      "doc_id": "doc_sm_paper",
+      "category": "limitation",
+      "title": "한계",
+      "text": "주머니 속 측정은 신뢰도가 낮고 참여자가 도심에 편중되었다.",
+      "keywords": [
+        "주머니",
+        "편중",
+        "도심",
+        "한계"
+      ],
+      "slide": 6,
+      "cue": "주머니·도심 편중"
+    },
+    {
+      "chunk_id": "sm_related_01",
+      "doc_id": "doc_sm_paper",
+      "category": "related_work",
+      "title": "선행 연구",
+      "text": "기존 참여형 소음 측정 연구는 기종 차이를 보정하지 않아 지역 간 비교가 어려웠다.",
+      "keywords": [
+        "선행",
+        "참여형",
+        "기종 차이",
+        "비교"
+      ],
+      "slide": 2,
+      "cue": "선행 연구는 보정 없음"
+    },
+    {
+      "chunk_id": "sm_script_01",
+      "doc_id": "doc_sm_script",
+      "category": "script",
+      "title": "원고: 결과로 넘어가기 전",
+      "text": "결과를 보여주기 전에 모든 비교가 원시 측정값 기준선 대비라는 점을 먼저 말한다.",
+      "keywords": [
+        "결과",
+        "비교",
+        "기준선",
+        "원시"
+      ],
+      "slide": 4,
+      "cue": "결과는 기준선 대비"
+    }
+  ],
+  "qa": [
+    {
+      "chunk_id": "sm_qa_01",
+      "question": "참여자 위치 정보는 개인정보 문제가 없나요?",
+      "answer": "위치는 250m 격자 단위로만 저장해 개인을 특정하기 어렵게 했습니다.",
+      "topic": "위치 개인정보",
+      "question_keywords": [
+        "위치",
+        "개인정보",
+        "프라이버시"
+      ],
+      "answer_keywords": [
+        "격자",
+        "250m",
+        "특정하기 어렵"
+      ],
+      "cue": "위치는 250m 격자로만 저장"
+    },
+    {
+      "chunk_id": "sm_qa_02",
+      "question": "왜 기종별 보정이 꼭 필요한가요?",
+      "answer": "기종마다 마이크 감도가 달라 보정 없이는 오차가 7.9dB까지 벌어집니다.",
+      "topic": "보정 필요성",
+      "question_keywords": [
+        "보정",
+        "필요",
+        "왜"
+      ],
+      "answer_keywords": [
+        "마이크 감도",
+        "기종마다",
+        "7.9"
+      ],
+      "cue": "기종마다 마이크 감도 다름"
+    },
+    {
+      "chunk_id": "sm_qa_03",
+      "question": "공인 측정소와 비교하면 얼마나 정확한가요?",
+      "answer": "보정 후 평균 오차는 2.1dB입니다.",
+      "topic": "정확도",
+      "question_keywords": [
+        "정확",
+        "얼마나",
+        "측정소와 비교"
+      ],
+      "answer_keywords": [
+        "2.1",
+        "평균 오차"
+      ],
+      "cue": "평균 오차 2.1dB"
+    },
+    {
+      "chunk_id": "sm_qa_04",
+      "question": "야간 오차가 더 큰 이유는 무엇인가요?",
+      "answer": "소음 수준이 낮을 때 마이크 자체 잡음의 비중이 커지기 때문입니다.",
+      "topic": "야간 오차",
+      "question_keywords": [
+        "야간",
+        "밤",
+        "이유"
+      ],
+      "answer_keywords": [
+        "자체 잡음",
+        "소음 수준이 낮"
+      ],
+      "cue": "낮은 소음에서 자체 잡음"
+    }
+  ],
+  "glossary": [
+    {
+      "chunk_id": "sm_term_01",
+      "term": "dB(A)",
+      "gloss": "사람 귀 감도를 반영한 소음 단위",
+      "keywords": [
+        "dba",
+        "db(a)",
+        "a가중"
+      ]
+    },
+    {
+      "chunk_id": "sm_term_02",
+      "term": "보정",
+      "gloss": "기기마다 다른 측정값을 기준에 맞추는 과정",
+      "keywords": [
+        "보정",
+        "캘리브레이션"
+      ]
+    },
+    {
+      "chunk_id": "sm_term_03",
+      "term": "크라우드소싱",
+      "gloss": "많은 시민이 나눠서 측정하는 방식",
+      "keywords": [
+        "크라우드소싱"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "session_id": "S03_en_slow_pace",
+  "title": "Speech much slower than slide plan",
+  "title_ko": "슬라이드 진행보다 발화가 지나치게 느린 발표",
+  "language": "en",
+  "scenario_type": "pace_too_slow",
+  "presenter_id": "presenter_en_b",
+  "kb_id": "kb_gazeflow",
+  "start_time": "2026-09-03T09:30:00+09:00",
+  "planned_duration_s": 540,
+  "description": "The presenter lingers on the opening slide with slow speech and an anecdote. One pace prompt brings the talk back on track.",
+  "events": [
+    {"event_id": "S03_e01", "elapsed_time": 10, "current_slide": 1, "transcript_chunk": "So... reading papers. We all, uh, skim dozens of papers every week.", "speech_rate": 108, "filler_count": 1, "presenter_state": {"arousal": 0.45}},
+    {"event_id": "S03_e02", "elapsed_time": 55, "current_slide": 1, "transcript_chunk": "And when a passage is dense... we end up re-reading it, again and again.", "speech_rate": 102, "silence_duration": 1.8, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "pace_too_slow", "expected_intervention": false, "expected_decision": "WAIT_AND_OBSERVE", "severity": "low", "note": "Slow, but still within the planned time for slide 1."}},
+    {"event_id": "S03_e03", "elapsed_time": 100, "current_slide": 1, "transcript_chunk": "Let me tell you about a time when I, um, spent a whole afternoon on one paper...", "speech_rate": 100, "filler_count": 1, "audience_signal": {"attention": 0.55, "confusion": 0.1, "reaction": "neutral"}, "presenter_state": {"arousal": 0.42},
+     "ground_truth": {"issue": "pace_too_slow", "expected_intervention": true, "expected_prompt_type": "pace_adjustment", "severity": "medium", "note": "40 s over the slide plan with slow speech and a digression."}},
+    {"event_id": "S03_e04", "elapsed_time": 128, "current_slide": 2, "transcript_chunk": "Right, so the problem: a static PDF cannot react when you struggle.", "speech_rate": 132, "presenter_state": {"arousal": 0.45},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "expected_outcome": "recovered"}},
+    {"event_id": "S03_e05", "elapsed_time": 160, "current_slide": 2, "transcript_chunk": "Highlighting tools exist, but they are manual.", "speech_rate": 138, "presenter_state": {"arousal": 0.42}},
+    {"event_id": "S03_e06", "elapsed_time": 185, "current_slide": 3, "transcript_chunk": "GazeFlow uses a webcam to spot regressions while you read.", "speech_rate": 136, "presenter_state": {"arousal": 0.4},
+     "ground_truth": {"issue": "none", "expected_intervention": false, "note": "Still about a minute behind plan, but the pace is back to normal and the remaining time is sufficient."}},
+    {"event_id": "S03_e07", "elapsed_time": 240, "current_slide": 3, "transcript_chunk": "Dense terms open a glossary pop-up, and everything stays local.", "speech_rate": 140, "presenter_state": {"arousal": 0.4}},
+    {"event_id": "S03_e08", "elapsed_time": 280, "current_slide": 4, "transcript_chunk": "We tested 24 participants, within-subjects, against a baseline reader without adaptation.", "speech_rate": 139, "presenter_state": {"arousal": 0.38}},
+    {"event_id": "S03_e09", "elapsed_time": 350, "current_slide": 5, "transcript_chunk": "Comprehension rose 18 percent over that baseline.", "speech_rate": 141, "presenter_state": {"arousal": 0.38}},
+    {"event_id": "S03_e10", "elapsed_time": 420, "current_slide": 6, "transcript_chunk": "The limitation is low light: the webcam accuracy drops.", "speech_rate": 140, "presenter_state": {"arousal": 0.37}},
+    {"event_id": "S03_e11", "elapsed_time": 470, "current_slide": 7, "transcript_chunk": "In short, attention-aware reading is feasible today.", "speech_rate": 142, "presenter_state": {"arousal": 0.36}}
+  ]
+}
