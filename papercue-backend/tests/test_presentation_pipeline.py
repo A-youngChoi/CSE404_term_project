@@ -140,6 +140,7 @@ def test_recent_intervention_suppresses_follow_up_prompts(svc):
     s12 = run_all(svc, "S12_ko_time_shortage")
     types = [p.prompt_type for p in s12.delivered]
     assert types == ["time_management", "wrap_up"]
+    assert s12.delivered[1].text == "마무리: 보정만으로 저비용 지도" and s12.delivered[1].target == "kp_sm_7a"
     assert by_event(s12, "S12_e04").decision.cooldown_state["redundant_with"] == s12.delivered[0].prompt_id
 
 

@@ -62,6 +62,10 @@ class ContextTracker:
             existing.signals = fields.get("signals", existing.signals)
             existing.detector_confidence = fields.get("detector_confidence", existing.detector_confidence)
             existing.description = fields.get("description", existing.description)
+            # The target can change while an issue stays active (e.g. time pressure escalating to a wrap-up).
+            existing.target = fields.get("target", existing.target)
+            existing.target_label = fields.get("target_label", existing.target_label)
+            existing.essential = fields.get("essential", existing.essential)
             existing.last_event_id = event.event_id
             if event.event_id not in existing.evidence_event_ids:
                 existing.evidence_event_ids.append(event.event_id)
